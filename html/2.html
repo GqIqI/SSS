@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+<body style="height: 10000px ;" >
+   <table border ="1">
+
+        <tr>
+            <td> aa</td> <td> bb</td>
+         </tr>
+         <tr>
+             <td> cc</td> <td> dd</td>
+         </tr>
+
+   </table>
+
+   <table border="1">
+
+       <tr>
+           <th> heading</th>   <!-- th为行标题-->
+           <th> another</th>
+       </tr>
+       <tr>
+           <td> row1 cell1</td>
+           <td> row2 cell2</td>
+
+       </tr>
+       <tr>
+           <td> row3 <a href="http://www.baidu.com" target="_blank" >百度</a></td>
+           <td> row4 cell4</td>
+       </tr>
+       <tr>
+           <td> row5 cell5</td>
+           <td> row6 cell6</td>
+       </tr>
+
+   </table>
+
+   <!-- 无序列表,前面为。。。-->
+         <ul>
+             <li> 11</li>
+             <li> 22</li>
+        </ul>
+   <!-- 有序列表,前面为123-->
+        <ol>
+            <li> 11</li>
+            <li> 22</li>
+        </ol>
+
+       <!--布局，划分区块-->
+       <div>
+           哈哈哈哈 <span style="color: blue " > 哈哈哈</span>  啊哈哈
+       </div>
+
+       <div> <!--无语义化-->
+           呵呵
+       </div>
+
+        <span> aaa</span>
+        <span> bbb</span>
+
+
+
+   <form action=""></form>
+        用户名:<input type="text"><br>
+        密码：<input type="password">
+
+   <form action=""></form>
+        <div>
+                <label for="username"> 用户名：</label>  <input id="username" type="text">
+        </div>
+
+        <div>
+                <label for="passward">密码:</label>  <input id="passward"type="password">
+        </div>
+
+   性别：
+   <input type="radio" name ="sex"checked>男
+   <input type="radio" name ="sex">女
+   <br>
+
+   爱好：
+   <input type="checkbox"> 吃饭     <!--checked为默认选中-->
+   <input type="checkbox"> 睡觉
+   <input type="checkbox"> 打豆豆
+   <br>
+
+   学校：
+   <select>
+       <option value="1">黑大</option>
+       <option value="2">农大</option>
+       <option value="3">理工</option>
+   </select>
+
+   <br>
+   <input type="button" value="按钮" >
+   <input type="submit" value="提交按钮" >
+   <button>按钮</button>
+   <br>
+
+   文本框:&nbsp;<textarea  id="ss" cols="30" rows="10"> </textarea><br>
+
+   <!--html5-->
+   number:<input type="number"><br>
+   email:<input type="email"><br>
+   data: <input type="date"><br>
+   color: <input type="color"><br>
+
+
+     <!--空格：&nbsp;-->
+     <!-- 实体字符 <  &lt;   > &gt;     &lt;script&gt;   -->
+     <!--   alert 弹出框-->
+
+   <script>
+       alert('hi')
+   </script>
+
+
+<!--块级元素：垂直分布，自己占一整行
+行级元素：水平分布-->
+
+   块级 <div> div </div>
+   块级<p>pppp</p>
+   块级<ul>
+       <li>lili</li>
+       </ul>
+   行级  <span>spanspan</span>
+   行级 <a href="#">aaaa</a>
+   既不是行也不是块<img src="1.png " alt="111">
+
+<!--
+html语义化：
+1.方便开发人员维护（给别人看方便）
+2.有利于搜索引擎优化(给机器看)
+-->
+
+</body>
+</html>
