@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background: cadetblue ;
+           }/*css标签选择器*/
+        #div1{
+            color: darkred;
+        } /*id选择器*/
+        li{
+            background: blueviolet ;
+          }
+        .aa{
+            color: azure;
+        } /*class选择器*/
+
+        div span {
+            background: darkorange ;
+        } /* 后代(派生)选择器*/
+
+        div>span{
+            color: gold;
+        }/*亲儿子（子带）选择器*/
+
+        .aa,p{
+            background: fuchsia ;
+        }/*分组选择器*/
+
+        #div1+p{
+            background: darksalmon ;
+        }/*紧挨着div*/
+
+        a:hover {
+            color: gold;
+        } /*伪类选择器*/
+        a:active {
+            color: blue;
+         }
+        #div3:first-letter {
+            color: greenyellow;
+        }/*伪元素选择其*/
+        #div3{
+            width: 150px;
+            height:500px;
+            background: bisque ;
+        }
+
+        #div3:first-line {
+            color: darkcyan;
+        }
+
+
+        #div5::after {
+            content:'哈哈';
+        }
+        #div5::before {
+            content: '呵呵';
+             color: lawngreen;
+        }
+        span{
+            background: blue ;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="2.1.css"><!--外部连接器-->
+</head>
+<body>
+
+内联样式
+
+    <div style="background: antiquewhite  ;color: black ;" > aaaaa</div>
+    <p style="background: lawngreen;color: green " >12345</p>
+内部样式
+    <div  id="div1"> bbbbbb</div>
+    <p>mmmmm</p>
+
+
+     <ul>
+         <li>789</li>
+         <li class="aa" >098</li>
+         <li class="aa" >123</li>
+         <li>567</li>
+    </ul>
+
+
+    <span> QQQQQQ</span>
+    <div>
+        <span> qqqqqq</span>
+    </div>
+    <div>
+        <p>
+            <span> wwwwww</span>
+        </p>
+    </div>
+
+
+    <a href="#"> 百度</a>
+
+    <div id="div3"> sdfghjk12345678</div>
+
+    <div id="div5">tttttttt</div>
+
+
+</body>
+</html>
