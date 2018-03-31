@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        #div0{
+           background: greenyellow ;
+           /* height:30px;*//*解决塌陷*/
+           /* overflow: hidden;*//*溢出隐藏可解决塌陷*/
+        }
+        #div1 ,#div2,#div3 {
+            width: 100px;
+            height:30px;
+            background: pink;
+            border: 1px solid gold ;
+           /* float: left;*/ /*div背景颜色不在显示，浮动后像漂浮再上面一样，不占据空间，div由子元素撑起，称为塌陷问题*/
+        }
+       h1{
+            background: darkcyan;}
+        #div4{
+            background: red ;
+        }
+        #div1{
+            position: relative;
+        }
+        .icon{
+            position: absolute;
+            right: -30px;
+            top: -10px;
+            background: green ;
+        }
+        .clear{
+            clear: both;
+        }
+      /*   .clearfix::after{
+            content: '';
+            clear: both;
+            display: block;
+        }*//*解决塌陷*/
+
+
+    </style>
+</head>
+<body>
+<!--塌陷：子元素浮动，父元素没有高度
+       解决：1，给父元素高度
+            2，父元素overflow:hidden（溢出）隐藏
+
+-->
+    <div id="div0" class="clearfix">
+        <div id="div1">
+            111111
+            <span class="icon">haha</span>
+        </div>
+        <div id="div2">222222</div>
+        <div id="div3">333333</div>
+        <div class="clear"> </div>
+    </div>
+    <div id="div4">haha</div>
+    <h1>5555555555</h1>
+
+
+</body>
+</html>

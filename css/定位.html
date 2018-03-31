@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+
+        body{
+            width: 100%;
+            height: 1000px;
+        }
+        div{
+            width: 100px;
+            height: 50px;
+            background: bisque;
+            display: inline-block;
+            border: 1px solid orange;
+        }
+        #div0{
+            width:400px;
+            height: 400px;
+            background: pink;
+           /* margin: 40px 30px ;*//*不影响子元素*/
+            position: relative;
+            left: 40px;
+            top: 30px;/*影响子元素，与之一起定位*/
+
+        }
+        #div2{
+        /*    position: relative;
+            left: 50px;
+            top: 50px;*/
+            position: absolute;
+            left: 50px;
+            top: 50px;
+
+        }
+        #div5{
+            width:80px;
+            height: 140px;
+            background: cornflowerblue;
+            position: fixed;
+            right: 40px;
+            top: 40px;
+        }
+        #div7 {
+            width: 350px;
+            height: 350px;
+            background: darkgray;
+            margin: 60px 60px; /*虽然为父元素，但是子元素不以他为原点，因为不是定位，必须以定位的就近祖先为远点*/
+            /*position: absolute;
+            left: 60px;
+            top: 60px;*/
+        }
+    </style>
+</head>
+    <!--
+    position:
+     默认的 Static
+    相对定位 relative   以自己为原点,移动后原空间不释放
+    绝对定位  absolute  空间释放。相对于最近已经定位的祖先元素为原点，如果祖先没有定位，
+    固定定位 fixed  相对于屏幕不动，小广告 ie6不好用
+
+    -->
+    <div id="div0">
+        <div id="div7">
+            <div id="div1">
+                111111
+            </div>
+            <div id="div2">
+                22222
+            </div>
+            <div id="div3">
+                33333
+            </div>
+        </div>
+
+
+</div>
+
+
+<div id="div5">
+    aaa aaa aaa aaa
+</div>
+</body>
+</html>

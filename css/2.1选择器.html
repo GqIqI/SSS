@@ -18,11 +18,11 @@
         } /*class选择器*/
 
         div span {
-            background: darkorange ;
+            background: turquoise ;
         } /* 后代(派生)选择器*/
 
         div>span{
-            color: gold;
+            color: red;
         }/*亲儿子（子带）选择器*/
 
         .aa,p{
@@ -55,7 +55,7 @@
 
         #div5::after {
             content:'哈哈';
-        }
+        }/*伪元素选择其*/
         #div5::before {
             content: '呵呵';
              color: lawngreen;
@@ -66,11 +66,33 @@
 
     </style>
 
-    <link rel="stylesheet" href="2.1.css"><!--外部连接器-->
+    <link rel="stylesheet" href="2.2外部连1.css"><!--外部连接器-->
 </head>
 <body>
+<!--属性中class aa bb后面的优先级高-->
+内联样式<!--优先级最高除了 属性后面的!important-->
+<!--
+     排序:
+     !important
+    style
+    id
+    class  class aa bb后面优先级高
+    标签选择器
+    *通配符
+    元素自带的 body 自带的margin为8px
 
-内联样式
+    id 永远高于class
+    style 1000
+    id 100
+    class 伪类 10
+   h  p span a 等标签 1
+    .a .b .c ..x   110
+
+
+
+
+
+-->
 
     <div style="background: antiquewhite  ;color: black ;" > aaaaa</div>
     <p style="background: lawngreen;color: green " >12345</p>

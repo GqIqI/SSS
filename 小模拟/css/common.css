@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+    font-family:"Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    height: 3000px;
+}
+ul{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.wrapper{
+    width:1230px;
+    margin: auto;
+}
+
+/*nav开始*/
+.nav{
+    background:#f2f2f2;
+    height:32px;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 32px;
+}
+.nav-menu >li,.nav-login{
+      float: left;
+}
+.nav-menu{
+     float: right;
+}
+.nav-menu a,.nav-login a{
+    padding:0 10px 0 10px;
+    color: #999;
+}
+.nav-login .p-login{
+    padding: 0 10px 0 20px;
+}
+.nav-menu .web-nav{
+    padding:0 45px 0 10px;
+}
+.nav-login span{
+    color: #999;
+}
+.nav-menu a span{
+    color:#666;
+}
+.nav-login a:hover ,.nav-menu a:hover {
+    color: #ff0036;
+}
+b{
+    width:0;
+    height:0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent ;
+    border-top: 6px solid #999;/*css做三角形   */
+}
+.triangle{
+    position: relative;
+}
+b{
+    position: absolute;
+    left:60px;
+    top:7px;
+}
+.s-triangle, .web-nav{
+    position: relative;
+}
+.s-triangle b{
+    position: absolute;
+    left:48px;
+    top:7px;
+}
+#div5{
+    width:35px;
+    height: 950px;
+    background:black ;
+    position: fixed;
+    right:0;
+    top:0;
+}
+
