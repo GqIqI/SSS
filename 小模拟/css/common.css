@@ -12,12 +12,17 @@ ul{
 }
 a {
     text-decoration: none;
+
 }
 .wrapper{
     width:1230px;
-    margin: auto;
+    margin:0 auto ;
 }
 
+.icon-shouji-tianchong,.icon-gouwucheman,.icon-liebiao{
+    color:  #ff0036 ;
+    font-size: 14px;
+}
 /*nav开始*/
 .nav{
     background:#f2f2f2;
@@ -38,8 +43,17 @@ a {
 .nav-login .p-login{
     padding: 0 10px 0 20px;
 }
+.sub-list a,.sub-list2 a{
+    padding: 0;
+    text-align: center ;
+    line-height: 20px;
+}
+
 .nav-menu .web-nav{
     padding:0 45px 0 10px;
+}
+.nav-menu a{
+    display: block;
 }
 .nav-login span{
     color: #999;
@@ -49,6 +63,59 @@ a {
 }
 .nav-login a:hover ,.nav-menu a:hover {
     color: #ff0036;
+
+}
+.s-triangle:hover ,.triangle:hover,.sub-list:hover {
+    text-decoration: underline;
+
+}
+.sn-menu:hover b {
+    transform: rotate(180deg) ;
+}
+.sn-menu:hover .sub-list-menu,.sn-menu:hover .sub-list-menu2,.sn-menu:hover .sub-list-menu3{
+    display: block;
+}
+.sn-list:hover,.sn-list2:hover,.sn-list3:hover{
+    height: 33px;
+    background: #fff;
+}
+.sn-list,.sn-list2,.sn-list3{
+    position: relative;
+}
+.sub-list-menu{
+    border: 1px  solid #eee;
+    border-top:none;
+    background: #fff;
+    position: absolute;
+    left:-1px;
+    top:33px;
+    padding: 6px 4px ;
+    width:75px;
+    display: none;
+}
+
+.sub-list-menu2{
+    border: 1px  solid #eee;
+    border-top:none;
+    background: #fff;
+    position: absolute;
+    left:-1px;
+    top:33px;
+    padding: 6px 4px ;
+    width: 65px;
+    display: none;
+}
+.sub-list-menu3{
+    border: 1px  solid #eee;
+    border-top:none;
+    background: #fff;
+    position: absolute;
+    left:0px;
+    top:33px;
+    padding: 6px 4px ;
+    width: 110px;
+  /*  display: none;*/
+    z-index: 2;
 }
 b{
     width:0;
@@ -56,7 +123,17 @@ b{
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     border-bottom: 3px solid transparent ;
-    border-top: 6px solid #999;/*css做三角形   */
+    border-top: 6px solid  #999;/*css做三角形   */
+    transition: all 0.2s linear ;
+    transform-origin:3px 1.5px ;
+}
+.sub-list-menu3{
+    width: 150px;
+    margin: 0 auto ;
+}
+.sub-list-menu3 a{
+    width: 55px;
+    float: left;
 }
 .triangle{
     position: relative;
@@ -64,7 +141,7 @@ b{
 b{
     position: absolute;
     left:60px;
-    top:7px;
+    top:15px;
 }
 .s-triangle, .web-nav{
     position: relative;
@@ -72,11 +149,23 @@ b{
 .s-triangle b{
     position: absolute;
     left:48px;
-    top:7px;
+    top:15px;
 }
-#div5{
+.web-nav b{
+    position: absolute;
+    left:73px;
+    top:15px;
+}
+
+
+/*nav结束*/
+
+
+
+
+
+#divx{
     width:35px;
-    height: 950px;
     background:black ;
     position: fixed;
     right:0;

@@ -1,0 +1,122 @@
+/*搜索*/
+.logo{
+    width: 240px;
+    height:130px;
+    float:left;
+    margin-left:-45px;
+}
+.search-box{
+     float: left;
+     margin: 38px 0 0 120px;
+
+ }
+.search {
+     width:625px;
+     height:36px;
+     border: 2px solid #ff0036 ;
+ }
+
+.search-text{
+    width: 491px;
+    height: 36px;
+    border: none;
+    outline: none;
+    float: left;
+}
+.search-button {
+    width: 134px;
+    height: 36px;
+    border: none;
+    background: #ff0036;
+    font-size: 18px;
+    color: #ffffff;
+    float: left;
+}
+.under-search{
+    margin-top: 5px;
+
+
+}
+.under-search li{
+    float: left;
+    padding: 0 12px;
+    position:relative;
+}
+
+.under-search a{
+    color: #999;
+    font-size: 14px;
+}
+.under-search .under-search-hot a{
+    color: #ff0036;
+}
+.under-search span{
+    width: 2px;
+    height: 14px;
+    background: #999999 ;
+    position: absolute;
+    right: 0;
+    top: 4px;
+}
+/*搜索完*/
+/*中间导航栏*/
+.menu-box {
+    height: 35px;
+    border-bottom:2px solid  #ff0036 ;
+}
+.menu-list {
+    margin-left: 200px;
+}
+.menu-list li{
+    float: left;
+    height: 36px;
+    line-height: 36px;
+}
+.menu-wrap {
+    overflow: hidden;
+}
+.menu-list img{
+    width: 100px;
+    margin-top: 3px;
+}
+.menu-list a{
+    color: #333;
+    font-size: 16px;
+    display: block;
+    padding: 0 10px ;
+}
+.menu-list a:hover {
+    color: #ff0036;
+}
+/*中间导航栏*/
+/*轮播图*/
+.slide-box{
+    position: relative;
+    height: 500px;
+}
+.slide-item {
+    position: absolute;
+    left:0px;
+    top: 0px;
+    width: 100%;/*定位和浮动后宽度由内容撑起，必须写死固定的，*/
+    z-index:-1
+}
+.slide-item1,.slide-item2{
+    background:#e8e8e8;
+}
+.slide-item3{
+    background:#fee9ec;
+}
+.slide-item4{
+    background:#aa632c;
+}
+.slide-item-link{
+    width: 1230px ;
+    display: block;
+    margin: 0 auto ;
+}
+.slide-item-link img{
+    width: 1230px;
+    height: 500px;
+}
+/*轮播图*/

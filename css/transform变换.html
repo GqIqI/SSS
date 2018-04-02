@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            transition: transform 5s ease  1s ;/*怎么变换几秒延迟几秒*/
+           /* margin:50px auto;*/
+            transform-origin: 3px 1.5px;/*以哪个点为原点变换*/
+        }
+        #div1:hover{
+            /*width:500px;*/
+            transform: rotate(180deg);/*旋转*/
+            /*transform: scale(0.5);*//*缩放*/
+            /*transform: translateY(30px);*//*x,y轴移动*/
+            /*transform: skew(30deg);*//*变形正方形变成平行四边形*/
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    div111
+</div>
+
+</html>
