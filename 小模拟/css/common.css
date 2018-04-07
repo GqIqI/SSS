@@ -43,12 +43,18 @@ a {
 .nav-login .p-login{
     padding: 0 10px 0 20px;
 }
-.sub-list a,.sub-list2 a{
+.sub-list a,.sub-list2 a {
     padding: 0;
     text-align: center ;
     line-height: 20px;
 }
-
+.list a{
+    height: 20px;
+    line-height: 20px;
+}
+/*.sub-list-menu3  .listmain h{
+  width: 100%;
+}*/
 .nav-menu .web-nav{
     padding:0 45px 0 10px;
 }
@@ -114,7 +120,7 @@ a {
     top:33px;
     padding: 6px 4px ;
     width: 110px;
-  /*  display: none;*/
+    display: none;
     z-index: 2;
 }
 b{
@@ -130,6 +136,11 @@ b{
 .sub-list-menu3{
     width: 150px;
     margin: 0 auto ;
+}
+.sub-list-menu3 .listmain{
+    width: 130px;
+    margin-left: 10px;
+
 }
 .sub-list-menu3 a{
     width: 55px;
@@ -159,16 +170,58 @@ b{
 
 
 /*nav结束*/
-
-
-
-
-
-#divx{
+/*右边黑框*/
+.div00{
     width:35px;
-    background:black ;
+    height: 100%;
+    background:black;
     position: fixed;
     right:0;
     top:0;
+    color: white;
 }
+.div00 i,.div00 a{
+    color: white;
+    font-size: 20px;
+    margin: 10px 4px  ;
+}
+.div00 .car a{
+    font-size: 12px;
+}
+.car{
+    border: 1px solid #999999;
+    border-right: none ;
+    border-left: none ;
+    height: 100px;
+    margin-top: 10px;
+}
+.car div{
+    width: 15px;
+    margin-left: 12px;
+    margin-bottom: 5px;
+}
+.div00 .icon-shopcart{
+    color: #FF0036;
+    margin-top: 15px;
+}
+
+.right-list1{
+    margin:100px 0 0px 0 ;
+    width: 35px;
+    height: 35px;
+   }
+.right-list1 i{
+    font-size: 25px;
+    margin: 10px 0 0 0;
+}
+.main-list {
+    margin-left: 3px;
+    margin-top:-15px;
+}
+.main-list2{
+    margin-left:2px;
+    margin-top:30px;
+}
+
+/*右边黑框*/
 

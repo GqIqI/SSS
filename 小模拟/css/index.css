@@ -92,7 +92,6 @@
 /*轮播图*/
 .slide-box{
     position: relative;
-    height: 500px;
 }
 .slide-item {
     position: absolute;
@@ -118,5 +117,117 @@
 .slide-item-link img{
     width: 1230px;
     height: 500px;
+    display:block;
 }
 /*轮播图*/
+/*左边导航栏*/
+.slide-left {
+    width: 200px;
+    position:relative;
+    top: -36px;
+}
+.slide-shop {
+    height: 36px;
+    background: #ff0036;
+    line-height: 36px;
+    font-size: 18px;
+    color:white;
+}
+.slide-left i{
+    color: #fff;
+    margin: 0 16px;
+}
+.slide-left a{
+    color: white;
+}
+.slide-category{
+    background:rgba(0,0,0,0.55) ;
+    height: 500px;
+}
+.category-item,.category-item2{
+    height:31px;
+    line-height: 31px;
+    font-size: 14px;
+}
+.category-item>a{
+    display: block;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.category-item:hover,.category-item2:hover {
+    background: white;
+}
+.category-item:hover>a,.category-item:hover>a>i,.category-item2:hover>a,.category-item2:hover>a>i{
+    color: #FF0036;
+}
+/*左边导航栏*/
+/*导航栏里面*/
+.big-frame,.big-frame2{
+    border: 1px  solid transparent;
+    border-left:none;
+    background: snow ;
+    position: absolute;
+    left:200px;
+    top:36px;
+    width:800px;
+    height: 500px;
+    display: none;
+}
+.category-item:hover .big-frame,.category-item2:hover .big-frame2{
+     display: block;
+}
+.left-frame,.left-frame2{
+    border: 1px solid transparent;
+    background: white;
+    width: 600px;
+    height: 500px;
+    float: left;
+
+}
+.img-frame,.img-frame2{
+    border: 1px solid transparent;
+    background: white;
+    margin: 6px 8px ;
+    width: 180px;
+    height: 484px;
+    float:left;
+}
+.img-frame1,.img-frame3{
+    padding: 17px 9px  ;
+}
+.img-frame img,.img-frame2 img{
+    width: 80px;
+    border: 0.5px solid whitesmoke;
+    display: inline-block;
+    float: left;
+}
+.all-kinds a,.all-kinds2 a{
+    color: #999;
+}
+.all-kinds li,.all-kinds2 li{
+    float: left;
+    padding: 2px 5px ;
+
+}
+.left-main,.left-main2{
+    font-weight:bold;
+    float:left;
+    padding: 10px 10px 10px  25px;
+}
+
+.right-main,.right-main2{
+     float: left;
+     width: 450px;
+    padding: 10px  10px 0 10px ;
+
+ }
+
+.all-kinds .kind1,.all-kinds2 .kind2 {
+    color: #ff0036;
+}
+.all-kinds a:hover,.all-kinds2 a:hover{
+    color: #ff0036;
+}
+
+/*导航栏里面*/
