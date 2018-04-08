@@ -3,11 +3,11 @@
     width: 240px;
     height:130px;
     float:left;
-    margin-left:-45px;
+    margin-left:-25px;
 }
 .search-box{
      float: left;
-     margin: 38px 0 0 120px;
+     margin: 38px 0 0 110px;
 
  }
 .search {
@@ -15,7 +15,6 @@
      height:36px;
      border: 2px solid #ff0036 ;
  }
-
 .search-text{
     width: 491px;
     height: 36px;
@@ -42,7 +41,6 @@
     padding: 0 12px;
     position:relative;
 }
-
 .under-search a{
     color: #999;
     font-size: 14px;
@@ -65,7 +63,7 @@
     border-bottom:2px solid  #ff0036 ;
 }
 .menu-list {
-    margin-left: 200px;
+    margin-left: 190px;
 }
 .menu-list li{
     float: left;
@@ -125,6 +123,8 @@
     width: 200px;
     position:relative;
     top: -36px;
+    height: 500px;
+    left: -8px;
 }
 .slide-shop {
     height: 36px;
@@ -215,19 +215,211 @@
     float:left;
     padding: 10px 10px 10px  25px;
 }
-
 .right-main,.right-main2{
      float: left;
      width: 450px;
     padding: 10px  10px 0 10px ;
 
  }
-
 .all-kinds .kind1,.all-kinds2 .kind2 {
     color: #ff0036;
 }
 .all-kinds a:hover,.all-kinds2 a:hover{
     color: #ff0036;
 }
-
 /*导航栏里面*/
+
+/*品牌图片*/
+.first-wrapper {
+    overflow: hidden;
+}
+.main-context{
+    background:#f2f2f2;
+    padding-top: 32px;
+}
+.b-first{
+    width:234px;
+    float: left;
+    margin-right: 5px;
+
+}
+.b-first h2{
+    background: white ;
+    height: 55px;
+    line-height: 55px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-left: 8px;
+}
+.b-img{
+    width: 100%;
+}
+.b-buy{
+    font-size: 18px;
+    font-weight: 700;
+}
+.b-english{
+    font-size: 14px;
+    font-weight: 700;
+   /* -webkit-font-smoothing: antialiased;*/
+}
+.b-more{
+    float: right;
+    margin-right: 1px;
+    color:#a4a4a4;
+    font-size: 18px;
+    font-weight: lighter;
+
+}.b-img:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=0.7) ;
+ }
+.b-second,.b-third {
+    width:485px;
+    float: left;
+    margin: 0 5px ;
+}
+.b-second  h2,.b-third h2{
+    background: white ;
+    height: 55px;
+    line-height: 55px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-left: 8px;
+}
+.b-img3,.b-img2{
+    width: 100%;
+}
+.b-buy2,.b-buy3{
+    font-size: 18px;
+    font-weight: 700;
+}
+.b-english2,.b-english3{
+    font-size: 14px;
+    font-weight: 700;
+    /* -webkit-font-smoothing: antialiased;*/
+}
+.icon-gengduo{
+    float: right;
+    margin-right: 13px;
+    color:#a4a4a4;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 5px;
+}
+.b-img2:hover,.b-img3:hover {
+     opacity: 0.7;
+     filter: alpha(opacity=0.7) ;
+ }
+.b-more2,.b-more3{
+    font-size:15px;
+    color: #666666;
+    font-weight: lighter;
+    float: right;
+}
+
+.b-wrapper {
+    margin-top: 15px;
+    overflow: hidden;
+}
+.kinds-b {
+ /*   overflow: hidden;*/
+    background: #999999 ;
+}
+.b-list img{
+    width: 100px;
+    height: 50px;
+    margin: 0 auto ;
+}
+.b-list {
+    width: 122px;
+    height: 108px;
+    background: white ;
+    padding-top: 29px;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    position: relative;
+}
+.b-list-img{
+    width: 122px;
+    height: 108px;
+    background: rgba(0,0,0,0.8) ;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.b-list-money{
+    color: white;
+    text-align: center;
+    margin-top: 35px;
+}
+.b-list-run{
+    background: #ff0036 ;
+    display: block;
+    color: white;
+    text-align: center ;
+    border-radius: 10px ;
+    width: 70px;
+    margin-left: 25px;
+    margin-top: 8px;
+    height: 18px;
+    line-height: 18px;
+}
+.b-list:hover .b-list-img{
+    display: block;
+}
+/*品牌图片*/
+/*某类单独广告*/
+.mart-wrapper {
+    margin-top: 20px;
+}
+.mart-head {
+    height: 31px;
+    line-height: 31px;
+    margin-bottom: 5px;
+}
+.mart-img{
+    width: 214px;
+    height: 25px;
+}
+.mart-head-list{
+    float: right;
+    margin-right: 10px;
+}
+.mart-head-list li{
+    float: left;
+
+}
+.mart-head-list li a{
+    font-size: 14px;
+    color: #000;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 1px;
+    margin: 5px 10px ;
+}
+.mart-head-list li a:hover {
+    border-bottom: 1px solid black;
+}
+.mart-body {
+    overflow:hidden;
+}
+.mart-left {
+    float: left;
+}
+.mart-left-img{
+    width: 235px;
+    height: 618px;
+}
+.mart-item-1 {
+    padding: 10px ;
+}
+.mart-right {
+  float: right;
+    background: red ;
+    width: 995px;
+    height: 618px;
+
+}

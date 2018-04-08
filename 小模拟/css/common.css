@@ -16,7 +16,7 @@ a {
 }
 .wrapper{
     width:1230px;
-    margin:0 auto ;
+    margin:0 12px  ;
 }
 
 .icon-shouji-tianchong,.icon-gouwucheman,.icon-liebiao{
@@ -52,9 +52,6 @@ a {
     height: 20px;
     line-height: 20px;
 }
-/*.sub-list-menu3  .listmain h{
-  width: 100%;
-}*/
 .nav-menu .web-nav{
     padding:0 45px 0 10px;
 }
@@ -169,6 +166,50 @@ b{
 }
 
 
+.guide {
+   width: 1230px;
+    height: 160px;
+    background: #aa632c ;
+    float: left;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+.guide1 ,.guide2 ,.guide3 {
+    float:left;
+}
+.guide1 ,.guide2{
+    width: 450px;
+}
+.guide3 {
+
+    width: 300px;
+}
+.list{
+    float:left;
+}
+
+.sn-list4{
+    position: relative;
+}
+.sub-list-menu4,.sub-list-menu5,.sub-list-menu6{
+    float: right;
+}
+.listmain4{
+    width: 400px;
+    margin: 10px 10px;
+    font-size: 18px;
+    color:orangered ;
+}
+.listmain5{
+    width: 430px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.listmain6{
+    width: 280px;
+    margin-left: 10px;
+}
 /*nav结束*/
 /*右边黑框*/
 .div00{
@@ -179,6 +220,7 @@ b{
     right:0;
     top:0;
     color: white;
+    z-index: 33;
 }
 .div00 i,.div00 a{
     color: white;
@@ -187,6 +229,7 @@ b{
 }
 .div00 .car a{
     font-size: 12px;
+
 }
 .car{
     border: 1px solid #999999;
