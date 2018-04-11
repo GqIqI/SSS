@@ -233,7 +233,6 @@
     color: #ff0036;
 }
 /*导航栏里面*/
-
 /*品牌图片*/
 .first-wrapper {
     overflow: hidden;
@@ -322,14 +321,13 @@
     font-weight: lighter;
     float: right;
 }
-
 .b-wrapper {
     margin-top: 15px;
     overflow: hidden;
 }
 .kinds-b {
- /*   overflow: hidden;*/
-    background: #999999 ;
+    overflow: hidden;
+ /*   background: #999999 ;*/
 }
 .b-list img{
     width: 100px;
@@ -408,8 +406,6 @@
 .mart-head-list li a:hover {
     border-bottom: 1px solid black;
 }
-
-
 .mart-body {
     overflow:hidden;
 }
@@ -429,59 +425,11 @@
 .mart-wrapper6{
     height: 600px;
 }
-.floor-left{
-    float: left;
-
-}
-.floor-beautiful {
-    display: inline-block;
-    font-size: 18px;
-    color: #000;
-    height: 28px;
-    margin-left: 10px;
-  /*  margin-right: 10px;*/
-    vertical-align:middle;
-}
-.floor-english {
-    display: inline-block;
-    font-size: 14px;
-    color: #000;
-    margin-left: 10px;
-    line-height: 24px;
-    height: 18px;
-    vertical-align:middle;
-}
-.icon-vertical{
-    display: inline-block;
-    width: 5px;
-    height: 18px;
-    vertical-align:middle;
-    background: #EA5F8D;
-}
-.icon-vertical2{
-    display: inline-block;
-    width: 5px;
-    height: 18px;
-    vertical-align:middle;
-    background:  #00B262;
-}
-.icon-vertical3{
-    display: inline-block;
-    width: 5px;
-    height: 18px;
-    vertical-align:middle;
-    background:  #0AA6E8;
-}
-
 .mart-item-1{
     padding: 10px;
     width: 464px;
     height: 281px;
 }
-/*.mart-right1{
-    overflow: hidden;
-    !*   position: relative;*!
-}*/
 .mart-right {
     float: right;
     background: #f5f5f5 ;
@@ -530,7 +478,6 @@
     color: white;
 }
 */
-
 .mart-content{
     height: 225px;
 /*    overflow: hidden;*/
@@ -561,7 +508,6 @@
     bottom:52px;
 
 }
-
 .mart-item-ad2{
     margin-right: 10px;
     vertical-align: middle;
@@ -582,7 +528,6 @@
     height: 40px;
     line-height: 40px;
 }
-
 .mart-item-2,.mart-item-3{
     width: 234px;
     height: 302px;
@@ -636,7 +581,6 @@
     border: 2px solid #fff;
 
 }
-
 .mart-item-2,.mart-item-3{
     width: 234px;
     height: 302px;
@@ -666,16 +610,66 @@
 .mart-item:hover .mart-item-3-img,.mart-left:hover .mart-left-img{
     opacity: 0.7;
 }
+.floor-left{
+    float: left;
+
+}
+.floor-beautiful {
+    display: inline-block;
+    font-size: 18px;
+    color: #000;
+    height: 28px;
+    margin-left: 10px;
+    /*  margin-right: 10px;*/
+    vertical-align:middle;
+}
+.floor-english {
+    display: inline-block;
+    font-size: 14px;
+    color: #000;
+    margin-left: 10px;
+    line-height: 24px;
+    height: 18px;
+    vertical-align:middle;
+}
+.icon-vertical{
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    vertical-align:middle;
+    background: #EA5F8D;
+}
+.icon-vertical2{
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    vertical-align:middle;
+    background:  #00B262;
+}
+.icon-vertical3{
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    vertical-align:middle;
+    background:  #0AA6E8;
+}
+/*某类单独广告*/
+/*横幅广告*/
 .int-ad{
     width:100%;
     background:#e3e1e2;
     height: 90px;
 }
+.int-wrapper a{
+    display: block;
 
+}
 .int-images{
     width: 1230px;
     height: 90px;
 }
+/*横幅广告*/
+/*猜你喜欢*/
 .wonderful-title {
     color: #666;
     text-align: center;
@@ -713,7 +707,8 @@
     margin-top: 25px;
     margin-bottom: 15px;
 }
-/*zzzz*/
+/*猜你喜欢*/
+/*最后*/
 .l-item-1 {
     float: left;
     width: 297px;
@@ -746,7 +741,6 @@
     -webkit-font-smoothing: antialiased;
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 }
-
 .item-1 {
     float: left;
     vertical-align: middle;
@@ -819,3 +813,4 @@
     color: #a4a4a4;
     margin-right: 65px;
 }
+/*最后*/
