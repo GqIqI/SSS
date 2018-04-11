@@ -36,8 +36,8 @@
       /*   .clearfix::after{
             content: '';
             clear: both;
-            display: block;
-        }*//*解决塌陷*/
+            display: block;只适用于块元素
+        }*//*给父元素解决塌陷*/
 
 
     </style>
@@ -46,6 +46,7 @@
 <!--塌陷：子元素浮动，父元素没有高度
        解决：1，给父元素高度
             2，父元素overflow:hidden（溢出）隐藏
+            3。clear:both
 
 -->
     <div id="div0" class="clearfix">

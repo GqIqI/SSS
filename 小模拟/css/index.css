@@ -215,6 +215,11 @@
     float:left;
     padding: 10px 10px 10px  25px;
 }
+.left-main h1,.left-main2 h1{
+    width: 80px;
+    height: 10px;
+    font-size: 14px;
+}
 .right-main,.right-main2{
      float: left;
      width: 450px;
@@ -668,7 +673,7 @@
 }
 
 .int-images{
-    width: 1320px;
+    width: 1230px;
     height: 90px;
 }
 .wonderful-title {
