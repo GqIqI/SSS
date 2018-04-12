@@ -411,6 +411,97 @@
 }
 .mart-left {
     float: left;
+    position: relative;
+}
+.mart-left .mart-frame {
+    position: absolute;
+    vertical-align: middle;
+    bottom: 20%;
+    width: 218px;
+    height: 64px;
+}
+.mart-left .mart-frame1{
+    background: rgba(0,0,0,.9);
+    width: 70px;
+    height: 64px;
+    overflow: hidden;
+    color: #FFF;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+.mart-left .mart-frame1 .left-title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 18px;
+    width: 36px;
+    overflow: hidden;
+}
+.mart-left .mart-frame2{
+    left: 70px;
+    top: 0;
+    position: absolute;
+    background: rgba(0,0,0,.6);
+    overflow: hidden;
+    width: 128px;
+    height: 64px;
+    color: #FFF;
+    vertical-align: middle
+}
+.mart-left .mart-frame2 .right-title{
+    display: block;
+    line-height: 24px;
+    font-size: 18px;
+}
+.mart-left .mart-frame3{
+    margin-top: 8px;
+    margin-left: 14px;
+}
+.mart-item-3 .mart-frame {
+    position: absolute;
+    vertical-align: middle;
+    bottom: 20%;
+    width: 218px;
+    height: 64px;
+}
+.mart-item-3 .mart-frame1{
+    background: rgba(0,0,0,.9);
+    width: 70px;
+    height: 64px;
+    overflow: hidden;
+    color: #FFF;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+.mart-item-3 .mart-frame1 .left-title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 18px;
+    width: 36px;
+    overflow: hidden;
+}
+.mart-item-3 .mart-frame2{
+    left: 60px;
+    top: 0;
+    position: absolute;
+    background: rgba(0,0,0,.6);
+    overflow: hidden;
+    width: 128px;
+    height: 64px;
+    color: #FFF;
+    vertical-align: middle
+}
+.mart-item-3 .mart-frame2 .right-title{
+    display: block;
+    line-height: 24px;
+    font-size: 18px;
+}
+.mart-item-3 .mart-frame3{
+    margin-top: 8px;
+    margin-left: 6px;
 }
 .mart-left-img{
     width: 235px;
@@ -594,6 +685,7 @@
     margin-bottom: 11px;
     background: #fff;
     border: none ;
+    position: relative;
 }
 .mart-item-4{
     float: left;
@@ -652,6 +744,33 @@
     height: 18px;
     vertical-align:middle;
     background:  #0AA6E8;
+}
+.detail-wrap{
+    background-image: linear-gradient(-180deg,rgba(0,0,0,0) 4%,rgba(0,0,0,.36) 100%);
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+
+
+}
+.detail-wrap1{
+    background-image: linear-gradient(-180deg,rgba(0,0,0,0) 4%,rgba(0,0,0,.36) 100%);
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+
+}
+.floor-arrow-big{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
 }
 /*某类单独广告*/
 /*横幅广告*/

@@ -84,7 +84,7 @@ a {
     display: none;
 }
 
-.sn-list:hover,.sn-list2:hover,.sn-list3:hover{
+.sn-list:hover,.sn-list2:hover,.sn-list3:hover,.sn-list4:hover{
     height: 33px;
     background: #fff;
 }
@@ -195,11 +195,13 @@ b{
 .guide {
    width: 1230px;
     height: 160px;
-    background: white;
     float: left;
     position: absolute;
     right: 0;
     z-index: 3;
+    border: 1px  solid #eee;
+    border-top:none;
+    background: #fff;
 }
 .guide1 ,.guide2 ,.guide3 {
     float:left;
@@ -256,17 +258,26 @@ b{
     color: white;
     z-index: 33;
 }
-.div00 i,.div00 a{
-    color: white;
+.div00 a:hover{
+    background: #FF0036 ;
+}
+.div00 a:hover i{
+    color:white;
+}
+.div00 i{
+    color: #acacac;
     font-size: 20px;
-    margin: 10px 4px  ;
+    margin: 20px 4px  ;
 }
 .div00 .car a{
     font-size: 12px;
-
+    color: #f5f5f5;
+    height: 100px;
+    margin-top:0;
 }
+
 .car{
-    border: 1px solid #999999;
+    border: 1px solid #f5f5f5;
     border-right: none ;
     border-left: none ;
     height: 100px;
@@ -275,21 +286,24 @@ b{
 .car div{
     width: 15px;
     margin-left: 12px;
-    margin-bottom: 5px;
+    color: white;
 }
 .div00 .icon-shopcart{
     color: #FF0036;
-    margin-top: 15px;
+    margin-left: 10px;
+    margin-top: 0;
+    display: block;
+    margin-bottom: 0;
+    padding-top: 10px;
 }
 
 .right-list1{
-    margin:100px 0 0px 0 ;
+    margin:100px 0 0 0 ;
     width: 35px;
     height: 35px;
    }
 .right-list1 i{
-    font-size: 25px;
-    margin: 10px 0 0 0;
+    font-size: 30px;
 }
 .main-list {
     margin-left: 3px;
@@ -297,8 +311,25 @@ b{
 }
 .main-list2{
     margin-left:2px;
-    margin-top:30px;
+    margin-top:100px;
 }
+.main-list2 i{
+    font-size: 18px;
+    color: #9d9d9d;
+}
+.div00 .main-list2>a{
+    margin-bottom: 0;
+    margin-left: 2px;
 
+}
+.div00 .main-last {
+    margin-top: 5px;
+    margin-left: 2px;
+}
+.div00 a{
+    width: 35px;
+    display: block;
+    margin: 25px auto ;
+}
 /*右边黑框*/
 
