@@ -77,6 +77,13 @@ a {
 .sn-menu:hover .sub-list-menu,.sn-menu:hover .sub-list-menu2,.sn-menu:hover .sub-list-menu3{
     display: block;
 }
+.sn-menu:hover .guide{
+    display: block;
+}
+.guide{
+    display: none;
+}
+
 .sn-list:hover,.sn-list2:hover,.sn-list3:hover{
     height: 33px;
     background: #fff;
@@ -138,10 +145,30 @@ b{
     margin-left: 10px;
 
 }
+.sub-list-menu3 h1{
+    font-size: 12px;
+    color: #666666;
+}
 .sub-list-menu3 a{
     width: 55px;
     float: left;
 }
+.sub-list-menu4 .list,.sub-list-menu5 .list,.sub-list-menu6 .list {
+    margin: 3px 5px 3px 10px;
+}
+.sub-list-menu4{
+    margin-left: 15px;
+
+}
+.sub-list-menu6 .list-0{
+   width: 110px;
+    margin-left: 20px;
+}
+
+.sub-list-menu6 .list-1{
+    margin-left:-10px;
+}
+
 .triangle{
     position: relative;
 }
@@ -168,7 +195,7 @@ b{
 .guide {
    width: 1230px;
     height: 160px;
-    background: #aa632c ;
+    background: white;
     float: left;
     position: absolute;
     right: 0;
@@ -194,20 +221,28 @@ b{
 .sub-list-menu4,.sub-list-menu5,.sub-list-menu6{
     float: right;
 }
-.listmain4{
+.sub-list-menu4 .listmain4{
     width: 400px;
-    margin: 10px 10px;
-    font-size: 18px;
+    margin: 20px 5px 8px 25px;
+    font-size: 16px;
     color:orangered ;
 }
-.listmain5{
+.sub-list-menu5 .listmain5{
     width: 430px;
-    margin-left: 10px;
-    font-size: 18px;
+    margin: 20px 5px 8px 25px;
+    font-size: 16px;
+    color:#2263d4;
+
 }
-.listmain6{
+.sub-list-menu6 .listmain6{
     width: 280px;
-    margin-left: 10px;
+    margin: 20px 5px 8px 25px;
+    color: #666666;
+    font-size: 16px;
+}
+.listmain4 h1,.listmain5 h1,.listmain6 h1{
+    font-size: 16px;
+    font-weight:lighter;
 }
 /*nav结束*/
 /*右边黑框*/
