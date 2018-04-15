@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型</title>
+</head>
+<body>
+<script>
+  //两种数据类型：1.基本数据类型 number string boolean undefined null
+  //             2.引用数据类型 array.object
+       //如果引用的是引用数据类型，则后面变量修改后，前面的赋值也跟着改变，因为栈中地址指的是堆中同一块元素
+           // var person1={ name:"zhangsan"}   var person2=person1；  person1.name='lisi';  console.log(person2.name);
+          // 输出结果为lisi
+      //如果引用的是基本数据类型，则后面变量修改后，前面的赋值不变
+         // var person1={ name:"zhangsan"}   var person2.name =person1.name； person1.name='lisi';  console.log(person2.name);
+          // 输出结果为zhangsan
+  //栈中存的是地址，指向堆中的元素
+
+/*
+    var a = 5;
+    var b = a;
+    a = 10;
+    console.log(b);   //5
+  */
+
+
+/*      var person1 = {
+          name : "zhangsan",
+          age:18
+      }
+      var person2 = person1;  //引用型
+      person1.name = 'lisi';
+      console.log(person2.name);
+*/
+
+/*
+   var person1 = {
+   name : "zhangsan",
+   age:18
+   };
+
+   var person2 = {};
+   person2.name = person1.name;//基本数据
+   person2.age = person1.age;
+
+   person1.name = 'lisi';
+   console.log(person2);
+*/
+
+
+ /*   var arr1 = [1,2,3];
+      var arr2 = arr1;
+      arr1[0] = 8;
+      console.log(arr2);
+      console.log(document.getElementById('div3'));
+ */
+
+/*
+ function aa(){
+       console.log('aaa');
+   }
+   console.log(typeof aa); //function
+*/
+
+/*
+   var obj = {
+        name:'zhangsan'
+    };
+    var arr = [1,2,3];
+
+ console.log(typeof arr); //object
+ console.log(typeof null); //object
+
+ console.log(arr instanceof Array);//true
+*/
+
+  //    typeof "string" "number" "boolean" "object" "undefined" "function";
+
+/*   console.log(undefined == null);//赋值true
+     console.log(undefined === null);//字符串比较false
+     console.log(3 === '3');//false*/
+  /*
+  ===值&类型
+  ==值
+  */
+
+
+/*
+var num=020;  // 2*8+0    0开头8进制
+var num1 = 0x12;  //  1*16+2 = 18       0x 16进制
+ console.log(num1);
+ */
+
+/*
+ console.log(!!NaN);//false
+ console.log(!5);//false
+  console.log(isNaN(NaN));//不是一个数字true
+   console.log(isNaN(123));//是数字false
+*/
+
+// console.log(NaN == NaN);//特殊在他与自身不相等   false
+  /*  例如'ab'-5 和 'x'/2*/   //布尔值 数字 字符串 都可以to string把值转化为字符串
+  //str可以知道其长度 str.length
+/*
+  var num=10;
+  alert(num.toString());//10
+  alert(num.toString(2));//1010
+  alert(num.toString(8));//12
+  alert(num.toString(16));//A
+  //对数字调用toString(10)与调用toString()相同，它们返回的都是该数字的十进制形式。
+  alert(num.toString(10));
+*/
+
+/*
+   var num = 10;
+   console.log(num.toString());//
+ */
+
+  /*
+   console.log(parseInt(1.23)); //转化成整形
+    parseInt('22a'); //22
+  */
+
+
+/*
+   aa();
+   bb();//b错
+   function aa(){
+   };
+   var bb = function(){
+   };
+*/
+
+/*
+ function fnTest() {
+// return "value";//使用return来返回值
+ alert("Hello!!!");//执行了return之后，函数就会退出
+ }
+ */
+
+/*
+  var x = fnTest();
+  console.log(x);//undefined
+
+*/
+
+//arguments是一个输出数组传进来的实参的，可以console.log(arguments);
+  function fnTest(arg1,arg2,arg3){
+     // console.log(arguments.callee); //调用自身函数  //[1,2,3,4];
+     // fnTest();
+     // arguments.callee();
+     alert(arg1+"\n"+arg2+"\n"+arg3);
+  }
+ //fnTest(1,2,3);
+    fnTest(1,2,3,4);//没有传值过去时，就会是undefined
+
+
+</script>
+</body>
+</html>
+</html>

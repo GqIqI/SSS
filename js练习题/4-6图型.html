@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+   /*       6.在页面上输出如下图案。
+                    *      4个空格
+                   * *     3个空格
+                  * * *    2个空格
+                 * * * *   1个空格
+                * * * * *  没空格
+     其中，每行的星号"*"之间有一个空格间隔。*/
+
+      for  (var i=1;i<=5;i++)//行
+      {
+            for(var j=1;j<=5-i;j++) document.write("&nbsp;");
+            for  (var k=1;k<=i;k++)
+               {
+                document.write('*'+"&nbsp;");
+               }
+            document.write ('<br/>');
+      }
+     //i=1,i<=5,开始执行第一个for循环，
+     //  j=1,j<4,输出一个空格，然后j变成2，2<5，在输出一个空格，直到j变成4，输出第四个空格，不满足条件了
+      //   执行下个for循环，k=1;k<=1，输出一个*，一个空格，k++后 =2，不满足小于i，结束循环
+   //   i++
+
+
+
+
+/*
+  var i,line;
+   for(line=1;line<=5;line++)
+   {
+       document.write("    ");
+       for(i=1;i<=5-line;i++) document.write(" ");
+       for(i=1;i<=line;i++)
+       {
+           document.write("*");
+           if (i>0) document.write(" ");
+       }
+       document.write("<br>");
+   }
+*/
+
+
+</script>
+</body>
+</html>

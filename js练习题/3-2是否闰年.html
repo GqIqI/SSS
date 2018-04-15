@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+/*    var today = new Date();   //获取当天日期
+    var year= today.getFullYear();   //获取当天年份
+    function cc() {
+        if(year%4 == 0 && year%100 != 0||year%400 == 0)
+        {
+            console.log("该年为闰年");
+        }
+        else
+            console.log("该年不是闰年");
+    }
+    cc();*/
+
+    function isYear(year){
+        return year%4 == 0 && year%100 != 0||year%400 == 0;
+    }
+    var today = new Date();   //获取当天日期
+    var year= today.getFullYear();   //获取当天年份
+    isYear(year)
+    if(isYear(year)){
+        document.write(year+"年是闰年")
+    }
+    else{
+        document.write(year+"年不是闰年")
+    }
+</script>
+</body>
+</html>

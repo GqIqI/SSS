@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+   /* 4.编写程序，计算 1!+2!+3!+…..＋10！的结果。*/
+
+ /*    var num;
+     var total=1;
+     var result=0;
+        for  (num=1;num<=10;num++){
+            total=total*num;
+            result=result+total;
+           }
+       alert('10以内的的阶乘相加结果是是'+result);*/
+
+    function f(n)
+    {
+        var result=1;
+        for(var i=1;i<n;i++){
+            result =result *i;
+        }
+        return result;
+    }//只求一个阶乘
+        var sum=0;
+        for( var i=0;i<10;i++){
+            sum=sum+f(i);
+        }
+        console.log(sum);
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+  /*  5.编写一个非递归函数factorial(n)，计算12!-10!的结果。*/
+
+    function aa(n) {
+        var sum=1;
+        for(var i=1;i<=n;i++){
+            sum=sum*i
+        }
+        return sum;
+    }
+ /*   var sum1=aa(12);
+    var sum2=aa(10);
+    document.write(sum1-sum2);*/
+    document.write("12!-10!="+(aa(12)-aa(10)));
+
+
+</script>
+</body>
+</html>
