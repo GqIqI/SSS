@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #btn{
+            width: 30px;
+            height: 50px;
+            background: #00b262 ;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+        }
+        body {
+            height: 2000px;
+        }
+
+    </style>
+</head>
+<body>
+<P>HAHAHA</P>
+<P>HAHAHA</P>
+<P>HAHAHA</P>
+<P>HAHAHA</P>
+<a  id="btn" href="javascript:;"></a><!--伪协议，不跳转-->
+
+<script>
+      var   OBtn=document.getElementById ("btn");
+      OBtn.onclick=function () {
+           // window.scrollTo(0,0) ;
+          // 将横向滚动条移动到相对于窗体宽度为x个像素的位置，将纵向滚动条移动到相对于窗体高度为y个像素的位置
+          var scrollTOP=document.documentElement.scrollTop||document.body.scrollTop ;
+          //document.documentElement获取到html
+          //获取滚动条距离上边的高速
+         var timer=setInterval(function ()
+          {
+              scrollTOP-=20;
+              scrollTo(0,scrollTOP );
+              if(scrollTOP<=0){
+                  clearInterval(timer);//到0的时候清楚定时器，才能拉下来
+              }
+          },10);
+      }
+
+
+
+</script>
+</body>
+</html>

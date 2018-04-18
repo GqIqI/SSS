@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+/*
+    var num=0;//每隔多久执行什么
+    var time=setInterval(function ()//参数为函数
+    {
+        num++;
+        console.log(Math.random());
+        if(num==10){
+            clearInterval(time);
+        }
+    },1000);//1000毫秒为1秒
+*/
+
+    var time1=setInterval(function ()
+    {
+       console.log("asfhjtk")
+
+    },500);
+    clearInterval(time1);
+
+
+    var time2= setTimeout(function ()//只执行一次
+    {
+        console.log(Math.random());
+    },1000);
+    clearInterval(time2);//清除定时器
+</script>
+</body>
