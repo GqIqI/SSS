@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
+        //BOM包含DOM   BOM里面有个 子对象是document(DOM)
+        //4种获取DOM方式：ID(getElementById) ,    标签名字(getElementsByTagName) ，
+        //               classname(getElementsByClassName)     name(function getEleByClass(xx))
+
+
+
         //        alert('aaa');
-        //window.onload 页面中所有的资源加载完 。。。 img 视频
+        //window.onload 页面中《所有的资源》加载完 在执行该命令。。。 包括 img 和视频
         /* window.onload = function(){
              console.log('load...');
              /!*var oDiv1 = document.getElementById('div1');
@@ -38,54 +44,160 @@
 
 <input type="radio" name=""/>
 <input type="text" name="username"/>
+
 <script>
-    /*console.log('111111');
+
+
     //通过id获取元素
+/*    console.log('111111');
     var oDiv1 = document.getElementById('div1');
-    //null
-    console.log(oDiv1);
-*/
+    //取不到为null*/
+/
+
+
     //类数组
-    /* var aDiv1 = document.getElementsByTagName('div');
+    /* var aDiv1 = document.getElementsByTagName('div');    //返回的为类数组，不能往里push等元素，但可循环调用
+      //aDiv1.push(111);//显示出错
+       aDiv1[i].onclick = function()
+       {
+      console.log('div'); //输出三个div
+       }
       for(var i=0; i<aDiv1.length; i++){
       aDiv1[i].onclick = function(){
       console.log(1111);
       }
       }*/
-    //        var aLi = document.getElementsByTagName('li');
-    /* var aLi = document.getElementsByClassName('aa');
+
+    //        var aLzheng'ti = document.getElementsByTagName('li');
+    //整体Li都被取到
+
+
+    /* var aLi = document.getElementsByClassName('aa');//取class=aa的元素，  IE6不支持这个对象.               方法
+       //console.log(aa);//输出2个
+       //console.log(bb);//取不到，输出为空数组
      for(var i=0; i<aLi.length; i++){
          aLi[i].style.background = 'red';
      }*/
+
+
+/*
+    function getEleByClass(clsName){
+        var result = [];//建立空数组
+        var aEle = document.getElementsByTagName('*');//取出所有元素
+        for(var i=0;i<aEle.length; i++ )
+        {
+            if(aEle[i].className == clsName)
+               {
+               result.push(aEle[i]);//数组存起来
+                 }
+         }
+       return result;
+    } //封装这个函数 ，以后直接用，找到这个class=aa的元素，放到aA的数组中
+    var aA = getEleByClass('aa');//找到所有class=aa的元素，放到aA的数组中
+
+    for(var i=0; i<aA.length; i++){
+         aA[i].style.background = 'red';
+     }//与上面等价
+*/
+
+
+/*
+        function getEleByClass(clsName){
+            var result = [];//建立空数组
+            var aEle = document.getElementsByTagName('*');//取出所有元素
+            for(var i=0;i<aEle.length; i++ )
+            {
+          /!*      if(aEle[i].className.indexOf (clsName)!= -1)
+                   {
+                   result.push(aEle[i]);//数组存起来
+                   }*!/     //这个方法不行，会把class=aabb的也取到，因为里面也包含aa
+            }
+           return result;
+        }
+        var aA = getEleByClass('aa');
+
+        for(var i=0; i<aA.length; i++){
+             aA[i].style.background = 'red';
+         }
+ */
+
+
+
+/*
+    function getEleByClass(clsName)
+  {
+
+    for(var i=0;i<aEle.length; i++ )
+    {
+//              "bb aa cc" == "aa"
+        var str = aEle[i].className;
+        var arr = str.split(' '); //['bb','aa','cc']
+        for (var j = 0; j < arr.length; j++)
+        {
+            if (arr[j] == clsName)
+            {
+                result.push(aEle[i]);//数组存起来
+            }
+        }
+    }
+      return result;
+  }//class= aa bb cc  可以取出aa
+
+    var aA = getEleByClass('aa');
+
+    for(var i=0; i<aA.length; i++){
+        aA[i].style.background = 'red';
+    }
+*/
+
+
+/*
+    var oUl = document.getElementById('ul1');
+    var aLi = oUl.getElementsByClassName('aa');//从 id=oUl中找到class=aa
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].style.background = 'green';
+    }
+  */
+
+//
     function getEleByClass(clsName,context){
-        var result = [];
+        var result = [];//建立空数组
+
+  /*      if(context)
+        {
+            context = context;
+        }
+        else
+        {
+            context = document;
+        }
+  */
+
         /*if(!context){
             context = document;
         }*/
-        context = context || document;
-        var aEle = context.getElementsByTagName('*');
+        context = context || document;//看后一个context是否为有效值。赋值为空，为undefined不是有效值，输出document
+
+        var aEle = context.getElementsByTagName('*');//取出所有元素
         for(var i=0;i<aEle.length; i++ ){
 //              "bb aa cc" == "aa"
             var str = aEle[i].className;
             var arr = str.split(' '); //['bb','aa','cc']
             for(var j=0; j<arr.length; j++){
                 if(arr[j] == clsName){
-                    result.push(aEle[i]);
+                    result.push(aEle[i]);//数组存起来
                 }
             }
         }
         return result;
     }
+    // var aA = getEleByClass('aa');//找到所有class=aa的元素，放到aA的数组中
     var oUl = document.getElementById('ul1');
     var aA = getEleByClass('aa',oUl);//className  从oUl下找
     for(var i=0; i<aA.length; i++){
         aA[i].style.background = 'red';
     }
-    /*var oUl = document.getElementById('ul1');
-    var aLi = oUl.getElementsByClassName('aa');
-    for(var i=0; i<aLi.length; i++){
-        aLi[i].style.background = 'green';
-    }*/
+
     //        aDiv1.push(111);
     var aInput = document.getElementsByName('username');
     console.log(aInput);
