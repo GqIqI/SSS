@@ -31,5 +31,25 @@
         console.log(Math.random());
     },1000);
     clearInterval(time2);//清除定时器
+
+
+var time1=setTimeout(function ()
+{
+    console.log(Math.random());
+    arguments.callee();//调用function函数，一直调用，不再是500毫秒出现一个随机数
+    console.log(time1);//结果为一个常数，1或其他的
+    console.log(setTimeout);//500毫秒一个随机数
+},500);
+
+
+   function aa() {
+
+       setTimeout(function ()
+       {
+           console.log(Math.random());
+           aa();//一直递归调用，500毫秒一个随机数 ，与上面函数等价
+       },500);
+   }
+    aa();//500毫秒此时输出一个随机数
 </script>
 </body>
