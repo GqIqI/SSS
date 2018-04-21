@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+</div>
+<input type="text" id="inp1"/>
+
+<script>
+    //        var oDiv = document.getElementById('div1');
+    /*oDiv.onmouseover = function(){//当鼠标移动到某对象范围的上方时触发此事件
+        console.log('div1 over');
+    };
+    oDiv.onmousemove = function(){//鼠标移动时触发此事件
+        console.log('div1 move');
+    };
+    oDiv.onmouseout = function(){//鼠标离开某对象范围时触发此事件
+        console.log('div1 out');
+    };
+    oDiv.onmousedown = function(){//当键盘上某个按键被按下时触发此事件
+        console.log('div1 down');
+    };*/
+
+    //        var oIpt = document.getElementById('inp1');
+
+    /*oDiv.onkeydown = function(){ //keydown对DIV不管用  当键盘上某个按键被按下时触发此事件
+        console.log('div1 keydown');
+    }
+    oDiv.onkeyup = function(){ //当键盘上某个按键被按放开时触发此事件
+        console.log('div1 up');
+    }*/
+    /*
+            oIpt.onfocus = function(){
+                console.log('focus');
+            }*/
+
+
+
+
+    var oDiv = document.getElementById('div1');
+    //        事件  事件源 事件处理函数
+    oDiv.onclick = function(e){//oDiv为事件源
+        console.log(e.clientX, e.clientY);//事件发生时，鼠标在客户端区域的X坐标。鼠标在客户端区域的Y坐标
+//            console.log(111);
+
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -6,20 +6,20 @@
     <style>
         #btn-box span{
             display: inline-block;
-            width: 100px;
-            height: 50px;
-            background: #ff0000;
+            width: 125px;
+            height: 40px;
+            background: wheat ;
             text-align: center;
-            line-height: 50px;
+            line-height: 40px;
             cursor: pointer;
         }
         #btn-box span.btn-active{
-            background: deeppink;
+            background: orange ;
         }
         #con-box div{
             width: 400px;
             height: 200px;
-            background: #00ff00;
+            background:orangered ;
             display: none;
         }
         #con-box div.active{
@@ -63,7 +63,7 @@
             }
             //this 对当前对象的引用
             this.className = 'btn-active';
-            //点击的按钮的index
+            //点击的按钮span的index
             var index = this.index;
             //找到下标为index的按钮对应的div  让当前的div显示
             aCon[index].className = 'active';

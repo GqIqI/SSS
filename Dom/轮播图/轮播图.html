@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0 ;
+        }
+        ul{
+            list-style: none ;
+        }
+        .container{
+            width: 750px;
+            height: 291px;
+            margin:50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #img-box{
+            width: 3750px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 0.5s ease  ;//ease先快后慢
+        }
+        #img-box a{
+            float: left;
+        }
+        #btn-box{
+            position: absolute;
+            right: 15px;
+            bottom: 5px;
+        }
+        #btn-box li,#arrow-box span{
+            width: 20px;
+            height:20px;
+            border-radius: 5px;
+            background:rgba(0,0,0,0.5) ;
+            margin-left: 5px;
+            float: left;
+            line-height: 20px;
+            color: white;
+            text-align: center ;
+            cursor: pointer;//鼠标变小手
+
+
+
+        }
+        #arrow-box {
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+        }
+        #btn-box .btn-1{
+            background: orangered ;
+        }
+
+    </style>
+</head>
+<body>
+<div  class="container">
+    <div id="img-box">
+        <a href="#" class="img-1"> <img src="images/3.jpg " alt=""> </a>
+        <a href="#"> <img src="images/4.jpg " alt=""> </a>
+        <a href="#"> <img src="images/5.jpg " alt=""> </a>
+        <a href="#"> <img src="images/1.jpg " alt=""> </a>
+        <a href="#"> <img src="images/2.jpg " alt=""> </a>
+    </div>
+   <ul id="btn-box">
+        <li class="btn-1">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+   </ul>
+   <div id="arrow-box">
+        <span id="arrow-box-2">&lt;</span>
+        <span id="arrow-box-1">&gt;</span>
+   </div>
+
+    <script>
+        var oBtn=document.getElementById("btn-box");
+        var aLi=oBtn.getElementsByTagName('li');
+        var oMig=document.getElementById("img-box");
+        var oNext=document.getElementById("arrow-box-1");
+        var oUp=document.getElementById("arrow-box-2");
+        var oContainer=document.getElementsByClassName("container")[0];
+        var count=0;
+/*        for(var i=0;i<aLi.length ;i++)
+        {
+           aLi[i].index=i;
+           aLi[i].onclick = function()
+           {
+               for(var j=0; j<aLi.length; j++)
+               {
+                   aLi[j].className = '';
+               }
+               this.className = 'btn-1';
+               var left = -this.index*750;
+               oMig.style.left=left+"px";
+               count=this.index;
+           }
+        }
+            oNext.onclick = function()
+            {
+                count++;
+                if(count==5){
+                    count =0;
+                }
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = '';
+                }
+                aLi[count].className = 'btn-1';
+                oMig.style.left= -count*750+"px";
+
+            }
+*/
+
+
+
+        for(var i=0;i<aLi.length ;i++)
+        {
+            aLi[i].index=i;
+            aLi[i].onclick = function()
+            {
+                changes(this.index);
+                count=this.index;
+            }
+        }
+        oNext.onclick = function()
+        {
+            count++;
+            if(count==aLi.length ){
+                count =0;
+            }
+            changes(count);
+        }
+
+        function changes(x) {
+            for(var j=0; j<aLi.length; j++)
+            {
+                aLi[j].className = '';
+            }
+            //this..className = 'btn-1';
+            aLi[x].className = 'btn-1';
+            oMig.style.left=-x*750+"px";
+
+        }
+
+
+
+
+
+        for(var i=0;i<aLi.length ;i++)
+        {
+            aLi[i].index=i;
+            aLi[i].onclick = function()
+            {
+                changes(this.index);
+                count=this.index;
+            }
+        }
+        oUp.onclick = function()
+        {
+            count--;
+            if(count==-1 ){
+                count =aLi.length-1;
+            }
+            changes(count);
+        }
+
+        function changes(x) {
+            for(var j=0; j<aLi.length; j++)
+            {
+                aLi[j].className = '';
+            }
+            //this..className = 'btn-1';
+            aLi[x].className = 'btn-1';
+            oMig.style.left=-x*750+"px";
+
+        }
+
+
+  var timer=setInterval (function () {
+      oNext.onclick();
+  },3000);
+
+ oContainer.onmouseover =function (){
+     clearInterval(timer);
+ };
+
+   oContainer.onmouseout =function () {
+       timer=setInterval (function () {
+           oNext.onclick();
+       },3000);
+   };
+
+    </script>
+
+</div>
+</body>
+</html>

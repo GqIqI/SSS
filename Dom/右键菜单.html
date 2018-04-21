@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width:120px;
+            border: 1px solid #9d9d9d;
+            border-radius:10px;
+            list-style: none;
+            display: none;
+            position: absolute;
+        }
+        li{
+
+            text-align: center ;
+            height: 30px;
+            line-height: 30px;
+            color: #555;
+            font-size: 12px;
+        }
+       li:hover{
+           background: deepskyblue;
+           color: #fff;
+       }
+    </style>
+
+</head>
+<body>
+
+    <ul id="div1" >
+        <li>设为代办</li>
+        <li>设为已读</li>
+        <li>置顶邮件</li>
+        <li>删除邮件</li>
+        <li>添加新项</li>
+    </ul>
+
+<script>
+   var oDiv=document.getElementById("div1");
+   var aLi=oDiv.getElementsByTagName('li');
+    document.oncontextmenu=function (a) {
+        oDiv.style.display = 'block';
+        oDiv.style.left=a.clientX+'px';
+        oDiv.style.top =a.clientY+'px';
+        return false;//阻止默认行为
+   }
+
+   document.onclick =function () {
+       oDiv.style.display = 'none';
+   }
+
+   for(var i=0; i<aLi.length;i++){
+        //点击后才执行  i=0时，绑一个点击事件 ，i=1时，绑一个点击事件，直至绑完，for结束循环，开始执行点击事件 ，此时i已经固定为5了
+        //当挨个执行每个点击事件时，i已经确定为5了
+       aLi[i].onclick = function(){
+         //  document.write (111);
+         //console.log (aLi[i]);//i最后为5，其实数组为0-4，所以为undefined
+          // console.log(this.innersHTML);//显示当前的内容
+          oDiv.style.display = 'none';
+       }
+
+   }
+
+
+</script>
+
+</body>
+</html>
