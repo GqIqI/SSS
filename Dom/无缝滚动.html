@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style: none ;
+        }
+        #div1{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #acacac;
+            margin: 100px auto ;
+            overflow: hidden;
+            position: relative;
+        }
+        #div2 li{
+            width: 120px;
+            height: 120px;
+            background: peachpuff;
+            color: yellow;
+            font-size: 40px;
+            line-height:120px;
+            text-align: center ;
+            float: left;
+            margin-right: 10px;
+        }
+         #div2 ul{
+            width: 520px;
+             overflow: hidden;
+             position: absolute;
+             left: 0;
+             top: 0;
+        }
+        #div3 span{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background: pink;
+            color: palevioletred;
+            font-size: 20px;
+            text-align:center ;
+            line-height: 50px;
+            margin-right: 5px;
+        }
+        #div3{
+            margin: 135px auto ;
+            width:220px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        <ul id="div0">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div id="div3">
+        <span id="left">向左</span>
+        <span id="right">向右</span>
+    </div>
+
+    <script>
+        var oDiv=document.getElementById('div0');
+        var oLeft=document.getElementById('left');
+        var oRight=document.getElementById('right');
+        var speed=-1;
+        var timer;
+         oDiv.innerHTML +=oDiv.innerHTML;
+         oDiv.style.width=oDiv.offsetWidth *2+"px";
+        run();
+         function run() {
+             timer=setInterval(function () {
+                 if(oDiv.offsetLeft <= -oDiv.offsetWidth/2){
+                     oDiv.style.left = '0px';
+                 }
+                 if(oDiv.offsetLeft > 0){
+                     oDiv.style.left = -oDiv.offsetWidth/2 +"px";
+                 }
+                 oDiv.style.left=oDiv.offsetLeft+speed+"px";
+
+             },10)
+         }
+        oRight.onmouseover = function(){
+            speed = 1;
+            run();
+        }
+        oLeft.onmouseover = function(){
+            speed = -1;
+            run();
+        }
+
+/*        var timer=setInterval(function () {
+            oDiv.style.left=oDiv.offsetLeft-1+"px";
+            if(oDiv.offsetLeft <= -oDiv.offsetWidth/2){
+                oDiv.style.left = '0px';
+            }
+        },10);
+
+        oLeft.onmouseover=function () {
+            clearInterval(timer)
+            setInterval(function () {
+                if(oDiv.offsetLeft <= -oDiv.offsetWidth/2){
+                    oDiv.style.left = '0px';
+                }
+                oDiv.style.left=oDiv.offsetLeft-1+"px";
+            },10);
+        }
+        oRight.onmouseover=function () {
+            clearInterval(timer)
+            setInterval(function () {
+                if(oDiv.offsetLeft > 0){
+                    oDiv.style.left = -oDiv.offsetWidth/2 +"px";
+                }
+                oDiv.style.left=oDiv.offsetLeft+1+"px";
+            },10);
+        }*/
+    </script>
+</div>
+</body>
+</html>
