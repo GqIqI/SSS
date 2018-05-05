@@ -77,7 +77,7 @@
         var timer;
          oDiv.innerHTML +=oDiv.innerHTML;
          oDiv.style.width=oDiv.offsetWidth *2+"px";
-        run();
+/*        run();
          function run() {
              timer=setInterval(function () {
                  if(oDiv.offsetLeft <= -oDiv.offsetWidth/2){
@@ -97,18 +97,18 @@
         oLeft.onmouseover = function(){
             speed = -1;
             run();
-        }
+        }*/
 
-/*        var timer=setInterval(function () {
+ /*       var timer=setInterval(function () {
             oDiv.style.left=oDiv.offsetLeft-1+"px";
             if(oDiv.offsetLeft <= -oDiv.offsetWidth/2){
                 oDiv.style.left = '0px';
             }
-        },10);
+        },10);*/
 
         oLeft.onmouseover=function () {
             clearInterval(timer)
-            setInterval(function () {
+            timer = setInterval(function () {
                 if(oDiv.offsetLeft <= -oDiv.offsetWidth/2){
                     oDiv.style.left = '0px';
                 }
@@ -117,13 +117,13 @@
         }
         oRight.onmouseover=function () {
             clearInterval(timer)
-            setInterval(function () {
+            timer = setInterval(function () {
                 if(oDiv.offsetLeft > 0){
                     oDiv.style.left = -oDiv.offsetWidth/2 +"px";
                 }
                 oDiv.style.left=oDiv.offsetLeft+1+"px";
             },10);
-        }*/
+        }
     </script>
 </div>
 </body>

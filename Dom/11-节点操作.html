@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">
+    1111
+</div>
+<div id="div2">
+   2222
+</div>
+<input type="button"  value="按钮" id="btn">
+<script>
+    //方法.createElement();  创建
+    // oDiv.removeChild(oSpan)   删除 oDiv中的 oSpan
+    //oDiv.replaceChild(oH1,oSpan)前面的替换后面的;
+    // oDiv.insertBefore (oH1,oSpan);在oSpan前面添加oH1
+   // oDiv.cloneNode(true);  克隆oDiv里面内容，true为深度克隆
+    //oDiv.appendChild(oSpan)oDiv内部后面添加oSpan
+
+
+
+    var oBtn=document.getElementById('btn');
+    var oDiv=document.getElementById('div1');
+    var oSpan=document.createElement('span');
+    oSpan.innerHTML='haha';
+    oDiv.appendChild(oSpan);//div内部的后面添加Span
+
+    oBtn.onclick= function () {
+       // oDiv.removeChild(oSpan);
+        var oH1=document .createElement('h1');
+        oH1.innerHTML='+++ ';
+        //oDiv.replaceChild(oH1,oSpan);
+        //oDiv.insertBefore (oH1,oSpan);
+        var oDiv1 = oDiv.cloneNode(true);
+        oDiv.appendChild(oDiv1);
+
+
+//属性：
+  //setAttribute()  设置属性
+  //getAttribute()  读取属性
+        /*oDiv.index = 10;
+        console.log(oDiv.index);*/
+       //
+        oDiv.setAttribute('index',20);
+       console.log(oDiv.getAttribute('index'));
+    }
+
+
+</script>
+</body>
+</html>

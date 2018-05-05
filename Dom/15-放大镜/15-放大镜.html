@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #div0{
+        width: 400px;
+        height: 400px;
+        position: relative;
+        float: left;
+    }
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background:rgba(255,255,255,0.4) ;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+
+    }
+    #div00{
+        width: 400px;
+        height: 400px;
+        float: left;
+        overflow: hidden;
+       // background: url("2.jpg") 0 0 no-repeat ;
+        display: none;
+        position: relative;
+    }
+  #img2{
+      position: absolute;
+      left: 0;
+      top: 0;
+  }
+</style>
+<body>
+<div id="div0">
+    <img src="1.jpg" alt="" id="img1">
+    <div id="div1" >
+
+    </div>
+</div>
+<div id="div00">
+    <img src="2.jpg" alt="" id="img2">
+</div>
+
+<script>
+    var oDiv=document.getElementById('div0');
+    var oDiv1=document.getElementById('div1');
+    var oDiv2=document.getElementById('div00');
+    var oDiv3=document.getElementById('img2');
+
+    oDiv.onmouseover =function () {
+        oDiv1.style.display='block';
+        oDiv2.style.display='block';
+    }
+    oDiv.onmouseout =function () {
+        oDiv1.style.display='none';
+        oDiv2.style.display='none';
+    }
+    oDiv1.onmousemove=function (e) {
+        e=e||window.event;
+     var left=e.clientX-oDiv1.offsetWidth/2;
+     var top=e.clientY-oDiv1.offsetHeight/2;
+     if(left<=0){
+         left=0;
+     }
+     var max1=oDiv.offsetWidth-oDiv1.offsetWidth;
+     var max2=oDiv.offsetHeight -oDiv1.offsetHeight;
+     if(left>= max1 ){
+         left= max1;
+     }
+     if(top<=0){
+            top=0;
+        }
+     if(top>=max2){
+            top=max2;
+     }
+     oDiv1.style.left=left+'px';
+     oDiv1.style.top=top+'px';
+
+     var xscale=left/max1;
+     var yscale=top/max2;
+
+     var bxmax=oDiv3.offsetWidth-oDiv2.offsetWidth;
+     var bymax=oDiv3.offsetHeight -oDiv2.offsetHeight;
+
+     var bleft= -xscale * bxmax;
+     var btop= -yscale * bymax;
+
+     oDiv3.style.left=bleft+'px';
+     oDiv3.style.top=btop+'px';
+   }
+
+</script>
+</body>
+</html>
