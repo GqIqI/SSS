@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">click</button>
+<ul id="ul1">
+    <li>1111</li>
+    <li>222</li>
+
+</ul>
+
+<script>
+
+    //事件委托是为了解决后生成元素的事件绑定问题
+    //    后生成元素的事件绑定
+    var oBtn = document.getElementById('btn');
+    var oUl = document.getElementById('ul1');
+    var aLi = document.getElementsByTagName('li');
+    oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oUl.appendChild(oLi);
+    }
+    //事件委托  事件默认为冒泡事件，点击子元素会触发父元素
+    oUl.onclick = function(e){
+        e = e || window.event;
+        var target = e.target || e.srcElement; //事件源
+       console.log(target.tagName);
+        if(target.tagName == 'LI'){
+           console.log(target.innerHTML);
+        }
+    }
+    /*oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oLi.onclick = function(){
+            alert(this.innerHTML);
+        }
+        oUl.appendChild(oLi);
+    }
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);//不用事件委托会造成新添加的元素不能点击出现自己的innerHTML
+        }
+    }*/
+</script>
+
+</body>
+</html>

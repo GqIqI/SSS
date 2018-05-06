@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+如果引用的是引用数据类型（number string boolean undefined null），则后面变量修改后，前面的赋值也跟着改变
+因为栈中地址指的是堆中同一块元素
+var person1={ name:"zhangsan"}   var person2=person1；  person1.name='lisi';  console.log(person2.name); 输出结果为lisi
+
+
+如果引用的是基本数据类型（array.object对象），则在后面修改前面的变量后，赋值不变。仍为前面的
+var person1={ name:"zhangsan"}  var person2.name =person1.name；person1.name='lisi'; console.log(person2.name); 输出结果为zhangsan
+<script>
+/*    obj={
+        name:'lili',
+        age:12,
+
+    }
+    obj1={
+    }*/
+/*    var key='name';
+    console.log(obj.key);//undefined
+    console.log(obj[key]);//lili
+    console.log(obj.age)//12*/
+
+/*    for(key in obj){
+        obj1[key]=obj[key];//给obj1赋值,必须是中括号，不可以是方法.属性,如果是方法.属性，会去obj中找，出现undefined
+    }
+    console.log(obj1);//{name: "lili", age: 12}
+    obj.name='sasa';
+    console.log(obj1);//{name: "lili", age: 12}
+    obj1.name='sasa';
+    console.log(obj1);//{name: "sasa", age: 12}
+    */
+
+
+    person1={
+        name:'aa',
+        age:22,
+        father:{
+            name:'zz'
+        }
+    };
+/*
+function clone(obj){  //浅克隆，父亲变成dd了
+        var obj1={};
+        for(key in obj){
+            obj1[key]=obj[key]
+        }
+        return obj1;
+}
+var person2=clone(person1);
+    person1.father.name='dd';
+    console.log(person2);//输出dd
+*/
+
+var obj1 = {
+    name:'zhangsan',
+    age:19,
+    father:{
+        name:'zhangxx',
+        age:50
+    }
+};
+/*
+var obj2 = obj1; //引用型 变
+obj1.name="lisi";
+console.log(obj2.name);//lisi
+*/
+
+var obj2 = {}; //浅克隆   //基本型 不变
+obj2.name = obj1.name;
+obj2.age = obj1.age;
+obj1.name = 'lisi';
+console.log(obj2.name);
+
+
+function clone(obj){  //深克隆
+    var obj1={};
+    for(key in obj){
+        if(obj[key] instanceof Object){
+            obj1[key] = clone(obj[key]);
+        }
+        obj1[key]=obj[key]
+    }
+    return obj1;
+}
+var person2=clone(person1);
+person1.father.name='dd';
+console.log(person2.father.name);  //输出zz
+
+
+
+/*function clone(obj){ //深克隆
+    var newObj = {};
+    for(key in obj){
+        //console.log(obj[key]);  //
+        if(typeof obj[key] == 'object'){
+            newObj[key] = clone(obj[key]);
+        }else{
+            newObj[key] = obj[key];
+        }
+        //newObj.father = obj.father;
+    }
+    return newObj;
+}
+var obj2 = clone(obj1);
+obj1.father.name = 'zxx';
+console.log(obj2);//zhangxx输出*/
+
+</script>
+
+
+</body>
+</html>
