@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /*$('#div1').on('mouseover',function(){
+            console.log(111);
+        });
+        $('#div2').on('mouseover',function(){
+            console.log(222);
+        });
+        $('#div3').on('mouseover',function(){
+            console.log(333);
+        });*/  //滑入   冒泡 从里往外都触发
+
+        /*$('#div1').on('mouseenter',function(){
+            console.log(111);
+        });
+        $('#div2').on('mouseenter',function(){
+            console.log(222);
+        });
+        $('#div3').on('mouseenter',function(){
+            console.log(333);
+        });*/ //不冒泡 只触发当前的划入
+
+
+        $('#div1').hover(function(e){
+            console.log(e.target);   //而current.target是针对当前的 相当于this
+            console.log('over');
+        },function(){
+            console.log('out');
+        });  //hover 两个function，前面的是划入，后面的是划出
+
+
+
+    </script>
+
+</body>
+</html>

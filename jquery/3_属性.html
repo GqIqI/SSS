@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 10px;
+            margin: 20px;
+            border:5px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" checked />
+    <select name="" id="">
+        <option value=""></option>
+    </select>
+    <div id="div1" class="aa">hahhahahah</div>
+    <input type="text" value="111"/>
+    <button class="btn">click</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      //  console.log(   $('#div1').attr('class')); //aa  可以取值也可以设置值
+
+     //   $('#div1').attr('class','bb'); //class变成bb
+      /*  $('#div1').removeAttr('class');*/
+
+        $('.btn').on('click',function(){
+//            console.log(   $(':text').val()   );//111输出text值
+//            $('#div1').toggleClass('aa');//有class变成不显示，没有变成显示
+//            console.log(   $('#div1').hasClass('aa')   );//看是否有class=aa,输出true or false
+            /*$('#div1').css({
+                background:'red',
+                width:300,
+                height:300
+            });*/
+              console.log($('#div1').height());//当前计算高度值 200 可以取值也可以设置值
+//            console.log($('#div1').innerHeight());//计算的内部高度（包括padding，但不包括border） 220  可以取值也可以设置值
+//            console.log($('#div1').outerHeight(true));//算高度值,包括padding，border 230和选择性的margin  270 可以取值也可以设置值
+ //            console.log($('.div1').outerHeight()); //元素id很多  取第一个的计算 可以取值也可以设置值
+          //  console.log(  $('#div1').offset().top   )// 距离文档的坐标 。top只有y州的可以取值也可以设置值
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

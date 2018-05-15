@@ -16,6 +16,7 @@
 
     //事件委托是为了解决后生成元素的事件绑定问题
     //    后生成元素的事件绑定
+    //不用事件委托会造成新添加的元素不能点击出现自己的innerHTML
     var oBtn = document.getElementById('btn');
     var oUl = document.getElementById('ul1');
     var aLi = document.getElementsByTagName('li');

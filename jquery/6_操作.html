@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <div id="div1">
+        aaaa
+    </div>
+    <p>fghjkl</p>
+    <h1>hhhh</h1>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+//      $("#div1").append('<p>sdfyguhjkl;</p>')//内部的后面加。。元素
+
+/*        var ele = document.createElement('span');
+        ele.innerHTML = 'hahha';
+       $('#div1').append(ele) //原生  append 相当于剪切 原来的不保留 要想保留需要加clone*/
+
+/*      var $ele = $('p').clone();
+           $('#div1').append($ele) //jquery   */
+
+//        $('#div1').append($ele).css('background','red').height(500);//div1内部后面插入ele，再给div1加样式
+
+
+        $('h1').appendTo('#div1').css(); //h1中插入到div1后面。再给h1加样式
+
+        $('#div1').append($('h1')).css()
+        //.prepend()内部的前面
+        //.html()与innerHtml一样
+        //.after()外部的后面
+        //.insertAfter()   $('<p>Test</p>').insertAfter('.inner');  <p>Test</p>放到.inner外部的后面
+        // .remove() $('.hello').remove();   hello没了
+       // .replaceAll()  $('<h2>New heading</h2>').replaceAll('.inner'); h2替换inner
+        //.replaceWith()   前面的被后面的替换了
+    </script>
+
+</body>
+</html>

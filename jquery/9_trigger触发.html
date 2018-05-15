@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text"/>
+
+<button id="btn">click</button>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    $('input').on('focus',function(){ //focus获取焦点
+        $(this).css('background','pink');
+    }).on('blur',function(){ //blur 失去焦点
+        $(this).css('background','#fff');
+    });
+
+    $('#btn').on('click',function(){
+//        $('input').trigger('focus');//触发整个事件，包括默认的
+        $('input').triggerHandler('focus');//只触发处理函数
+    });
+
+</script>
+</body>
+</html>

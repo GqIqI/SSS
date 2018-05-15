@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+           list-style: none;
+            overflow: hidden;
+        }
+        .content{
+            width: 600px;
+            height: 400px;
+            margin-left: 50px;
+            margin-top: 50px;
+            font-size: 12px;
+            color: #666;
+        }
+        li{
+            float: left;
+            text-align: center;
+            cursor: pointer;
+            padding: 1px 6px;
+            margin-right: 4px;
+            background: #F1F1F1;
+            border: 1px solid #898989;
+            border-bottom: none;
+        }
+        .frame{
+            width: 230px;
+            height: 100px;
+            border: 1px solid #898989;
+        }
+        .active {
+            background:#336699 ;
+            color: white;
+        }
+        .frame div {
+            display: none;
+        }
+        .frame .selected {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li class="active">体育</li>
+            <li>时事</li>
+            <li>娱乐</li>
+        </ul>
+        <div class="frame">
+            <div class="selected">体育</div>
+            <div>时事</div>
+            <div>娱乐</div>
+        </div>
+    </div>
+    <script src="../jquery-1.12.4.js "></script>
+    <script>
+        $('li').on('click',function(){
+            $(this).addClass('active').siblings().removeClass('active');
+          //  $('.frame div').eq($(this).index()).show().siblings().hide();
+            $('.frame div').eq($(this).index()).addClass('selected').siblings().removeClass('selected');
+
+        });
+    </script>
+</body>
+</html>

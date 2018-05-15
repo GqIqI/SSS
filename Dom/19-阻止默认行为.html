@@ -5,10 +5,20 @@
     <title></title>
 </head>
 <body>
+<a href="http://www.baidu.com" id="btn">baidu</a>
 
-return false
+<script>
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function(e){
+        console.log(this.innerHTML);
 
-e.preventDefault();
-e.returnValue=false;
+        return false;
+        e.preventDefault();//不支持ie
+        e.returnValue = false;
+
+    }
+
+</script>
+
 </body>
-</html>
+</html>>

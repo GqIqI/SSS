@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="animate">animate</button>
+
+    <button id="stop">stop</button>
+    <div id="div1"></div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+
+        $('#animate').on('click',function(){
+            $('#div1').animate({
+                width:800
+            },2000).animate({
+                height:500
+            },2000)
+        });//执行两个动画，一个一个执行
+
+
+        /*
+        $('#hide').on('click',function(){
+            $('#div1').hide(2000,function(){
+                console.log('ok');//花费2000毫秒隐藏    隐藏完console.log('ok'）
+            });
+
+            console.log('ok111');//直接输出  console.log('ok'），在一点点隐藏
+        });
+
+           $('#hide').on('click',function(){
+            $('#div1').slideUp(2000);
+        });//显示
+
+        */
+        $('#hide').on('click',function(){
+            $('#div1').slideUp(2000);//往上直到变没
+        });
+
+        $('#toggle').on('click',function(){
+            $('#div1').toggle(500);// 切换，有就变没有
+        });
+
+
+        $('#stop').on('click',function(){
+            $('#div1').stop(false,true);//false直接跳转到最后，true的慢慢执行完
+        });//stop（）默认false 只清前面的  后面队列不清除。stop(true)，都清了
+
+
+
+
+
+        var oUl = $('ul');
+        $('ul li'); //ul下查找li
+        $('li',oUl);//优化了 ul不用找了
+        $(function(){
+
+        });
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

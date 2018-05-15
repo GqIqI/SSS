@@ -54,6 +54,7 @@
         },false);
         oDiv3.addEventListener('click',function(e){
             e.stopPropagation();//阻止冒泡，只显示此个
+            e.cancelable=true;//阻止冒泡，只显示此个
             console.log('div3冒泡');
         },false);
 

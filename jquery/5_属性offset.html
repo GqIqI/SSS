@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+            position: relative;
+            margin:50px; /*两种分别为150 150。。100 100*/
+            overflow: scroll;/*溢出则出现滚动条*/
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            background: #0f0f0f;
+            /*position: absolute;
+            left:100px;
+            top:100px;*/  //100 100
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+        <div class="div2"></div>
+        <div class="div2"></div>
+        <div class="div2"></div>
+        <div class="div2"></div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      //  console.log(  $('#div2').offset()  ); //第一个元素的当前坐标，坐标相对于文档。
+      //  console.log(  $('#div2').position()  );// 第一个元素的当前坐标，相对于offset parent的坐标。
+                                             // ( 译者注：offset parent指离该元素最近的而且被定位过的祖先元素 )
+
+       $('#div1').scrollTop(100);//滚动条距上方的距离
+
+    </script>
+
+
+</body>
+</html>
