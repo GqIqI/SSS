@@ -60,16 +60,16 @@
 <script>
     $('.editable').on('click',function(){
         if(  $(this).find('input').size() == 0     ){
-            var $val = $(this).text();
-            $(this).html('<input class="name" type="text" value="'+$val+'"/>');
-            $(this).find('input').trigger('select');
+            var $val = $(this).text();//存一下默认值
+            $(this).html('<input class="name" type="text" value="'+$val+'"/>');//把当前的内容替换成输入框
+            $(this).find('input').trigger('select');//触发选中事件
         }
     });
 
-    $('.editable').on('keyup','input',function(e){
+    $('.editable').on('keyup','input',function(e){//后生成元素绑定事件
         if(e.which == 13){
             var $iVal = $(this).val();
-            $(this).parent().html($iVal);
+            $(this).parent().html($iVal);//回车后元素置回原来那样
         }
     });
 

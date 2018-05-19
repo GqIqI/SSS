@@ -42,7 +42,7 @@
 <script>
 
 
-    $('#filterName').on('keyup',function(){
+    $('#filterName').on('keyup',function(){  //键盘抬起就筛选
 //        $(this).val();
         $('tbody tr').hide();
         $('tbody tr:contains('+$(this).val()+')').show();

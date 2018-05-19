@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!--
+    文本框得到/失去焦点练习，功能：
+    1.文本框得到/失去焦点时动态变换文本框样式
+    2.文本框得到时，清除文本框默认值；失去焦点时，如果文本框值未改变，恢复默认值，否则使用修改值
+
+    //文档就绪函数
+    //思路：
+    //功能1：选中所有的输入框，注册获得焦点事件，添加样式：focus；注册失去焦点事件，动态移除样式：focus
+    //功能2：获得焦点时，如果文本框的值等于默认值，则清空文本框；失去焦点时，如果文本框的值等于空字符串，则恢复默认值
+    //提示：defaultValue属性可以得到文本框的默认值
+    //要求：尽量使用链式操作
+-->
+
     <meta charset="UTF-8">
     <title></title>
     <style>
@@ -21,13 +35,14 @@
     </style>
 </head>
 <body>
-
+//思路：选中所有的输入框，注册获得焦点事件，添加样式：focus；注册失去焦点事件，动态移除样式：focus
+//要求：尽量使用链式操作（.xxx）
 <form action="" method="post" id="regForm">
     <fieldset>
         <legend>个人基本信息</legend>
         <div>
             <label  for="username">名称:</label>
-            <input id="username" type="text" value="名称" />
+            <input id="username" type="text" value="名称" /><!--  value 为默认值-->
         </div>
         <div>
             <label for="pass">密码:</label>
@@ -44,13 +59,13 @@
 <script>
     $(':input').on('focus',function(){
         $(this).addClass('focus');
-        if(this.value == this.defaultValue){
+        if(this.value == this.defaultValue){//如果当前值等于默认值，就清空，其他情况就不清，可以继续修改
             this.value = '';
         }
     }).on('blur',function(){
         $(this).removeClass('focus');
-        if(this.value == ''){
-            this.value = this.defaultValue;
+        if(this.value == ''){//失去焦点时，什么都没输入，就恢复默认值
+            this.value = this.defaultValue;//当前值等于最开始的默认值
         }
     });
 

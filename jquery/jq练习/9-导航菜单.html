@@ -4,112 +4,170 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
-            padding: 0;
-            margin: 0;
+        /*
+        	 * 清除小圆点
+        	 */
+        ul,li{
+            list-style:none;
+            font-size:20px;
         }
+        /*
+         * 清除子菜单的缩进
+         */
         ul{
-            list-style: none;
-            width: 210px;
-            height: 25px;
-            border: 1px solid #cccccc;
-            margin: 10px ;
-            top: 10px;
+            padding:0px;
+            margin:0px;
         }
-        .frame{
-            float: left;
-            width: 100px;
-            height: 30px;
-            background: #999999;
-            margin: 10px 10px 10px 0;
-
+        /*
+         * 主菜单颜色
+         */
+        .main{
+            width:150px;
+            background:#ccc;
         }
+        /*
+         * 子菜单颜色
+         */
         li{
-            width: 15px;
-            height: 15px;
-            margin: 5px;
-            background: url("颜色雪碧图.gif ") 0 0 no-repeat;
-            float: left;
+            background:#777;
+
         }
-        li:nth-child(1){
-            background-position: 0 0;
+        a{
+            color:black;
+            text-decoration:none;
+            padding-left:20px;
+            display:block;
+            padding-bottom:3px;
+            padding-top:3px;
         }
-        li:nth-child(1).active{
-            background-position: 0 -15px;
+        .main a{
+            background-image:url("down.gif");
+            background-repeat:no-repeat;
+            background-position:3px center;
+
+        }
+        .main li a{
+            color:white;
+            background-image:none;
+
+        }
+        .main ul{
+            display:none;
         }
 
-        li:nth-child(2){
-            background-position: -20px 0;
+
+        .hmain{
+            width:150px;
+            background:#ccc;
+            float:left;
         }
-        li:nth-child(2).active{
-            background-position: -20px  -15px;
+        .hmain a{
+            background-image:url("down.gif");
+            background-repeat:no-repeat;
+            background-position:3px center;
+
         }
-        li:nth-child(3){
-            background-position: -40px  0;
+        .hmain li a{
+            color:white;
+            background-image:none;
+
         }
-        li:nth-child(3).active{
-            background-position: -40px  -15px;
+        .hmain ul{
+            display:none;
         }
-        li:nth-child(4){
-            background-position: -60px  0;
-        }
-        li:nth-child(4).active{
-            background-position: -60px  -15px;
-        }
-        li:nth-child(5){
-            background-position: -80px  0;
-        }
-        li:nth-child(5).active{
-            background-position: -80px  -15px;
-        }
-        li:nth-child(6){
-            background-position: -100px  0;
-        }
-        li:nth-child(6).active{
-            background-position: -100px  -15px;
-        }
-        .skin0{
-            background: #999999;
-        }
-        .skin1{
-            background: #BB3BD9;
-        }
-        .skin2{
-            background: #E31559;
-        }
-        .skin3{
-            background: #08BECE;
-        }
-        .skin4{
-            background: #FBA60A;
-        }
-        .skin5{
-            background: #AFD400;
-        }
+
 
     </style>
 </head>
 <body>
-  <div>
-      <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-      </ul>
-      <div class="frame">时事新闻</div>
-      <div class="frame">重点资讯</div>
-  </div>
-  <script src="../jquery-1.12.4.js"></script>
-  <script>
-      $('li').on('click',function(){
-          $(this).addClass('active').siblings().removeClass('active');
-          $('.frame').attr('class','news skin'+$(this).index());
-          setCookie()
-      });
-  </script>
+<ul>
+    <li class="main">
+        <a href="#">菜单项1</a>
+        <ul>
+            <li>
+                <a href="#">子菜单11</a>
+            </li>
+            <li>
+                <a href="#">子菜单12</a>
+            </li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#">菜单项2</a>
+        <ul>
+            <li>
+                <a href="#">子菜单21</a>
+            </li>
+            <li>
+                <a href="#">子菜单22</a>
+            </li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#">菜单项3</a>
+        <ul>
+            <li>
+                <a href="#">子菜单31</a>
+            </li>
+            <li>
+                <a href="#">子菜单32</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<br>
+<br>
+<ul>
+    <li class="hmain">
+        <a href="#">菜单项1</a>
+        <ul>
+            <li>
+                <a href="#">子菜单11</a>
+            </li>
+            <li>
+                <a href="#">子菜单12</a>
+            </li>
+        </ul>
+    </li>
+    <li class="hmain">
+        <a href="#">菜单项2</a>
+        <ul>
+            <li>
+                <a href="#">子菜单21</a>
+            </li>
+            <li>
+                <a href="#">子菜单22</a>
+            </li>
+        </ul>
+    </li>
+    <li class="hmain">
+        <a href="#">菜单项3</a>
+        <ul>
+            <li>
+                <a href="#">子菜单31</a>
+            </li>
+            <li>
+                <a href="#">子菜单32</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script src="../jquery-1.12.4.js"></script>
+
+<script>
+    $('.hmain').hover(function(){
+        $('.hmain ul:animated').stop(false,true);
+        $(this).children('ul').slideDown();
+    },function(){
+        $(this).children('ul').slideUp();
+    })
+
+
+
+
+
+</script>
 
 
 </body>
