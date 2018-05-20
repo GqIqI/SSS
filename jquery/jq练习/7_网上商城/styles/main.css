@@ -426,6 +426,31 @@
     padding: 0;
     position: relative;
 }
+/*.jqzoomWrap .cencer-img{
+    width: 150px;
+    height: 150px;
+   background:rgba(255,255,255,0.4) ;
+    position: absolute;
+    left:0;
+    top:0;
+ display: none;
+  background: #FF0036 ;
+
+}
+#jnProitem .right-img{
+    width: 350px;
+    height: 350px;
+    float: left;
+    overflow: hidden;
+  display: none;
+    position: absolute;
+    left:515px;
+    top:0;
+    background: #FF0036 ;
+}
+.showa{
+    display: block;
+}*/
 #jnProitem span {
     clear: both;
     display: block;

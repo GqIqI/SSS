@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //在$函数中，会返回一个jquery对象，然后在jquery对象中判断是什么选择器或者函数，添加样式的函数
+    function $(selector){
+        return new Jquery(selector);
+    }
+    function Jquery(sel) {
+        this.elements=[];
+        if(typeof sel == "string"){
+            if(sel.charAt(0)=="#"){
+              this.elements.push(document.getElementById(sel.substring (1)));
+            }
+            else if(sel.charAt(0)=="."){
+                this.elements = document.getElementsByClassName (sel.substring(1));
+            }
+        }
+        if(typeof sel=='function'){
+            document.addEventListener('DOMContentLoad',sel,false)//html页面加载完，执行sel函数，相当于文档就绪函数
+        }
+    }
+
+/*
+    Jquery.prototype.css=function(attr,val){
+        if(typeof attr=='string'&&val=='string')
+        {
+            for(var i=0;i<=this.elements.length;i++){
+            this.elements[i].style[attr]=val;//当attr值变化时，[attr]=.attr
+           }
+        }
+         else if(typeof attr=='object'&&!val)//object为对象，!val没传值，相当于undefined
+         {
+             for(var i=0;i<=this.elements.length;i++)
+             {
+                 for(key in attr)
+                 {
+                     this.elements[i].style[key]=attr[key];
+                 }
+             }//attr相当于属性width:20,height:100。
+         }
+           retutrn this;
+    };
+ */
+
+    Jquery.prototype.css=function(attr,val)
+    {
+        for(var i=0;i<=this.elements.length;i++)
+        {//this.elements[i]
+           if(typeof attr=='string'&&val=='string')
+              {
+                this.elements[i].style[attr]=val;//当attr值变化时，[attr]=.attr
+              }
+          else if(typeof attr=='object'&&!val)//object为对象，!val没传值，相当于undefined
+           {
+                for(key in attr)
+                {
+                    console.log(attr);//width,height
+                    this.elements[i].style[key]=attr[key];
+                }//attr相当于属性width:20,height:100。
+           }
+        }
+        return this;
+    };
+    Jquery.prototype.on=function(type,fn)
+    {
+      for(var i=0;i<=this.elements[i].length;i++){
+          this.elements[i].addEventListener(type,fn,false);
+      }
+      return this;//返回$，为了链式操作
+    };
+
+
+    $("#aa").css('background','red');
+    $(".bb").css({
+        width:20,
+        height:100
+    });
+    $(function(){
+        console.log(111);
+    });
+    $(".ee").on('click',function(){
+        alert('111');
+    });
+    $(".ff").on('click',function(){
+        alert('111');
+    }).on('click',function(){
+        alert('222');
+    })
+
+
+</script>
+</body>
+</html>

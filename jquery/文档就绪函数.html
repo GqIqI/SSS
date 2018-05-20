@@ -5,11 +5,15 @@
     <title></title>
     <script src="jquery-1.12.4.js"></script>
     <script>
+
+        //ready事件是在DOM模型构造完毕时触发
+       // load事件是在页面加载完毕后触发
+
         /*window.onload = function(){
-            document.getElementById('div1');
+            document.getElementById('div1');文档加载完
         }*/
 
-        /*$(document).ready(function(){//文档就绪函数
+        /*$(document).ready(function(){//文档就绪函数 dom html资源加载完
 
         });
 
@@ -22,7 +26,7 @@
         };
         window.onload = function(){
             console.log(222);
-        };*/
+        };*/  //后面的会给前面的覆盖
 
         $(function(){
             console.log(111);
@@ -35,7 +39,7 @@
         });
         $(function(){
 
-        });
+        });//function()为页面DOM元素加载完成后要执行的代码.
 
 
 

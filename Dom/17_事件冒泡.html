@@ -42,12 +42,12 @@
         console.log('222');
     }*/
 
-    oDiv.addEventListener('click',function(){  //监听可以同时执行多个事件
+    oDiv.addEventListener('click',function(){  //事件监听可以同时执行多个事件
         console.log(111);
     },false);
     oDiv.addEventListener('click',function(){
         console.log(222);
-    },false);
+    },false);//false冒泡//true可捕获
 
 
 

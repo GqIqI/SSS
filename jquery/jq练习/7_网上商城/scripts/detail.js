@@ -65,3 +65,57 @@ $('.color_change img').on('click',function(){
     $('.color_change strong').html($(this).attr("alt"));
 });
 /* 放大镜颜色*/
+/*放大镜*/
+$('.color_change img').on('click',function(){
+    $(this).addClass('hover').parent().siblings().find('img').removeClass('hover');
+
+
+var $src = $(this).attr('src');//images/pro_img/green.jpg
+var i = $src.indexOf('.');
+var $path = $src.substring(0,i);//images/pro_img/green
+var $format = $src.substring(i);//.jpg
+$('#bigImg').attr('src',$path+"_one_small"+$format);
+var $color = $path.replace('images/pro_img/','');
+$('.imgList li').addClass('hide');
+$('.imgList_'+$color).removeClass('hide');//底下一排小图
+
+
+$('.imgList li img').on('click',function(){
+    var $src = $(this).attr('src');
+    var i = $src.indexOf('.');
+    var $path = $src.substring(0,i);
+    var $format = $src.substring(i);
+    $('#bigImg').attr('src',$path+'_small'+$format);//大图
+});
+});
+/*放大镜*/
+
+/*$('.jqzoomWrap .jqzoom').append('<div class="cencer-img"></div>');
+$('#jnProitem').prepend('<div class="right-img"></div>');
+$('#bigImg').on('mouseover',function(){
+    $('.cencer-img').addClass('showa');
+    $('.right-img').addClass('showa');
+    console.log('111');
+});*/
+/* 滑过图片出现放大镜效果 */
+/*
+$(function(){
+    $("#jnBrandList li").each(function(index){
+        var $img = $(this).find("img");
+        var img_w = $img.width();
+        var img_h = $img.height();
+        var spanHtml = '<span style="position:absolute;top:0;left:5px;width:'+img_w+'px;height:'+img_h+'px;" class="imageMask"></span>';
+        $(spanHtml).appendTo(this);
+    })
+    $("#jnBrandList").delegate(".imageMask", "hover", function(){
+        $(this).toggleClass("imageOver");
+    });
+
+    /!*
+    $("#jnBrandList").find(".imageMask").live("hover", function(){
+        $(this).toggleClass("imageOver");
+    });
+    *!/
+});
+*/
+
