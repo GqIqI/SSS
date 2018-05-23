@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距合并</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: darkorange;
+            margin-bottom: 40px;
+        }
+        #div2 {
+            width: 400px;
+            height: 400px;
+            background: gold;
+            margin-top: 50px;
+            /*通常外边距都取较大的一个解决外边距合并问题。*/
+          /*  float: left;*/
+          /*  position:absolute;*/
+        }
+
+        #div3 {
+            width:200px;
+            height: 200px;
+            background: darkcyan ;
+            margin-top: 30px;
+           /* border: 1px solid transparent;*//*父元素加边框*/
+        /*   overflow: hidden;*//*父元素加*/
+            /*float: left;*//*子父都行*/
+            /*position: absolute;*///定位
+           /*padding-top:20px;*/
+        }
+        #div4{
+            width: 100px;
+            height: 100px;
+            background: bisque ;
+            margin-top: 50px;
+         /*   float: left;*/
+          /*  position: absolute;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        qqqqqqqqqqqqqqq
+    </div>
+
+    <div id="div2">
+        aaaaaaaaaaaaa
+    </div>
+    <div id="div3">
+        <div id="div4"> 123344555 </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<script src="c.5-js" async></script>-->// async没有的话只能一个一个执行，等js加载完在执行body
+<!--<script src="../require.5-js" data-main="index"  ></script>
+
+
+原理：require.js会动态创建script标签（根据正则表达式匹配）， 异步加载js文件(同步执行,不阻塞下面的执行)。-->
+
+
+<script>
+    var oScript = document.createElement('script');
+    oScript.src="add.js";
+
+    document.head.appendChild(oScript);
+
+    /*async*/
+    //async  defer
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

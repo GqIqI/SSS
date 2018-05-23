@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      /* body,html{
+                height: 100%;
+         }
+         .mask{
+             width: 100%;
+             height: 100%;
+             background: rgba(0,0,0,0.4);
+             position: absolute;
+             left:0;
+             top:0;
+             /!*background: #ff0000;*!/
+         }*/
+
+        .dialog-mask{
+            position: absolute;
+            left: 0;
+            top:0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .dialog-box{
+            width: 400px;
+            height: 300px;
+            background: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        /*  margin-left: -200px;
+            margin-top: -150px;*/
+            -webkit-transform: translate(-50% ,-50%)  ;  /*  -webkit为chorm的前缀*/
+        }
+    </style>
+</head>
+<body>
+<div class="dialog-mask">
+    <div class="dialog-box">
+        <div class="dialog-top">
+            提示
+            <span>x</span>
+        </div>
+        <div class="dialog-bottom">
+         登陆
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
