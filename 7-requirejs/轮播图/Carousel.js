@@ -60,7 +60,9 @@ define(['jquery'],function($){
         });
 
         function run(){
-            console.log(_this);
+            console.log(_this);//Carousel
+            console.log(this);//window
+
             _this.timer = setInterval(function(){
                 _this.$next.trigger('click');
             },_this.defaultOption.speed);

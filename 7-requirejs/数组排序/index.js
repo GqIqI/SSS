@@ -1,6 +1,6 @@
 
 require(['sortArray'],function(sortArray){ //['sortArray']为用到的模块，后面的function为他要执行的函数
-    var arr1=[1,2,5,3,6,4];//页面级的用require  ，模块级用define，可以被别的调用
+    var arr1=[1,2,5,3,6,4];//页面级的用require 引入主键  ，模块级用define 新建主键，可以被别的调用
     var str='aaaa';
     var object={
         name:'sss',

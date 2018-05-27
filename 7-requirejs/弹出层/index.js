@@ -1,6 +1,6 @@
 requirejs.config({
     paths: {
-        jquery: '6-jquery-1.12.4'
+        jquery: 'jquery-1.12.4'
     }//改文件名或者写这样一个路径
 });
 //为了使多层弹出层的效果，把其 属性和方法 用类表现，返回一个类，每次new一个新的类，传属性，在调用其方法
@@ -35,9 +35,9 @@ requirejs.config({
 // 类：具有相同属性和方法的对象的集合
 //声明类 属性写在构造函数中  方法写在原型下
 
-require(['jquery','dialog'],function($,Dialog){
+require(['jquery','dialog'],function($,Dialog){ //里面是数组和函数，数组里面是需要引入的模块名称
 
-    $('#btn') .on('click',function(){
+    $('#btn') .on('click',function(){   //新建一个类，传参数后 ，调用类方法
         var dialog1= new Dialog({
             width:300,
             height:300,

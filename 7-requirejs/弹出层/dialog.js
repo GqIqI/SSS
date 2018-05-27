@@ -59,8 +59,9 @@ define(function(){
 
 
 
-function Dialog(obj) {
+function Dialog(obj) {//引入html，还可以加样式
     var that=this;
+    console.log(that);
     this.$DialogMask= $('<div class="dialog-mask"></div>');
     this.$DialogBox= $('<div class="dialog-box"></div>').css({
         width:obj.width,
@@ -71,10 +72,10 @@ function Dialog(obj) {
     this.$DialogH2=$('<h2>提示</h2>').html(obj.top);
     this.$DialogRight=$('<span class="dialog-right">X</span>').on('click',function(){
         that.$DialogMask.remove();  //如果用this，this指的是当前<span class="dialog-right">X</span>，里面没有$DialogMask
-    });
+    });//Dialog {}
 }
 
-Dialog.prototype.open= function(){
+Dialog.prototype.open= function(){//加入样式后，在把这些html append 起来，形成完整的，对其打开或者关闭
     this.$DialogMask.append(this.$DialogBox);
     this.$DialogBox.append(this.$DialogToP).append(this.$DialogBottom);
     this.$DialogToP.append(this.$DialogH2).append(this.$DialogRight);
