@@ -22,23 +22,23 @@
             border:10px solid blue;
             border-radius: 50%;
             position: absolute;
-            left:-10px;
+            left:-10px; //定位时候不算边框  ，所以要想重合，往回负回去
             top:-10px;
         }
         .blue{
             border-color: blue;
-            left:0px;
-            top:0px;
+            left:0;
+            top:0;
         }
         .blue::after{
             border-color: blue;
             z-index:1;
-            border-bottom-color: transparent;
+            border-bottom-color: transparent;  //上层的下边框透明
         }
         .black{
             border-color: black;
             left:230px;
-            top:0px;
+            top:0;
         }
         .black::after{
             border-color: black;

@@ -7,23 +7,22 @@
         #div1{
             width: 100px;
             height: 40px;
-            background:rgba(255,0,0,0.5);
-            /*opacity: 0.5;*/
-            /*filter:alpha(opacity = 50);*/
+            background:rgba(255,0,0,0.5);//只有背景半透明
+            /*opacity: 0.5;*/  //0到1  全部半透明
+            /*filter:alpha(opacity = 50);*/ //0到100
 
-            /*text-shadow: 5px 10px 2px #f00;*/
-            /*单行文本溢出...*/
-            text-overflow: ellipsis;
+            /*text-shadow: 5px 10px 2px #f00;*/  //文本阴影   水平 垂直 模糊值 颜色
+            text-overflow: ellipsis;  /*单行文本溢出显示...  */  //clip 为溢出切掉 三行组合使用
             overflow: hidden;
-            white-space: nowrap;
+            white-space: nowrap; //不换行 强制在一行显示
 
         }
         #div2{
             width: 200px;
             height: 40px;
             background: #ccc;
-            word-wrap: break-word;
-           /*-webkit-word-wrap:break-word;*/
+            word-wrap: break-word;  //长单词也会整体换行 不打破完整性
+           /*-webkit-word-wrap:break-word;*/  不好用
         }
     </style>
 </head>

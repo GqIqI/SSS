@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        li:nth-child(0){
+        li:nth-child(0){     //没颜色  代表第几个 不是索引
             background: #ff0000;
         }
-        /*li:nth-child(2n){color:#f00;} /!* 偶数 *!/*/
+        /*li:nth-child(2n){color:#f00;} /!* 偶数   0 2 4 6   n从0开始 *!/*/
         li:nth-child(2n+1){color:#f00;} /* 奇数 */
 
         #div1::first-letter{
@@ -19,8 +19,8 @@
         .div2{
             width: 200px;
             height: 200px;
-            /*box-shadow: 3px 6px 5px 2px rgba(0,0,0,0.5);*/
-            box-shadow: 0 0 10px 10px rgba(0,0,0,0.5) inset;
+            /*box-shadow: 3px 6px 5px 2px rgba(0,0,0,0.5);*/  //水平向右偏移，垂直向下，阴影模糊，阴影外延
+            box-shadow: 0 0 10px 10px rgba(0,0,0,0.5) inset;//四圈都有阴影，去掉前两项  inset内阴影
         }
     </style>
 </head>
