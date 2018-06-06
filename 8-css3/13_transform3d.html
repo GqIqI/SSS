@@ -13,7 +13,7 @@
             height: 200px;
             border:2px dashed #000;
             margin:50px auto;
-           -webkit-perspective: 800px;
+           -webkit-perspective: 800px;  //视角。 写在父元素身上  拉开一定的距离去看3D更明显
         }
         .div2{
             width: 200px;
@@ -21,9 +21,9 @@
             background: #ff0000;
             /*transform: rotateX(-30deg);*/
             /*transform: rotateY(30deg);*/
-            /*transform: rotateZ(30deg);*/
-            /*transform: translateZ(-100px);*/
-            transform:scaleY(0.5);
+ /*           transform: rotateZ(60deg);*/
+            transform: translateZ(-100px);  //x右正。Y下正。Z外正
+       /*     transform:scaleY(0.5);//X左右缩放。Y上下缩放。z没有*/
         }
     </style>
 </head>

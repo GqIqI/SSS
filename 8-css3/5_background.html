@@ -7,12 +7,14 @@
         #div1{
             width: 500px;
             height: 500px;
-            border:10px dashed #999;
+            border:10px dashed #999;//不是实线 是点边框
             background: url("ggg.jpg") no-repeat;
-            /*background-origin: content-box;*/
+            /*background-origin: content-box;*///背景图的原点从哪开始 border-box,padding-box
             /*background-size: 50% 50%;*/
-            /*background-size: cover;*/
-            background-size: contain;
+            /*background-size: cover;*///图片覆盖到所有，会溢出
+            background-size: contain;//显示完整图片，不溢出
+        /*    background-attachment: fixed;scroll;local*///滚条动，图片相对于视觉固定，一直不东。 图片相对于元素固定。图片
+
             padding: 20px;
             color: #ff0000;
 

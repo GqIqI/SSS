@@ -12,16 +12,15 @@
             width: 800px;
             height: 500px;
             background: #999999;
-            display: flex;
+            display: flex;//父元素允许子元素分份
             /*flex-direction: row;*/
-            /*flex-direction: column-reverse;*/
-            /*align-items:center;*/
+            /*flex-direction: column-reverse;*/ //竖着反向分
+            /*align-items:center;*/纵轴的子元素对其方式  上对齐 下对齐 居中对齐
 
         }
         .child1{
-            /*flex: 1;*/
             background: #ff0000;
-            /*width:200px;*/
+            /*width:200px;*/   //另一个孩子 flex: 1;/*   margin 属于固定空间，需要减去再分*/
             flex: 1;
         }
         .child2{
@@ -35,16 +34,21 @@
 弹性盒模型
 父元素：
 display:flex
+
+左右排列和上下排列
 flex-direction：row | row-reverse | column | column-reverse
 横向从左到右排列 |横向相反 | 即纵向从上往下排列 |纵向相反
-align-items:flex-start | flex-end | center | baseline | stretch
-纵轴垂直对齐方式
-justify-content：flex-start | flex-end | center | space-between | space-around
-横轴水平对齐方式
 
+水平对齐和竖直对齐
+justify-content：flex-start | flex-end | center | space-between | space-around
+横轴水平对齐方式//左对齐 右对齐 居中 两边与中间距离相等   两边与外面距离相等
+align-items:flex-start | flex-end | center | baseline | stretch
+纵轴垂直对齐方式//上对齐 下对齐 居中对齐
 
 子元素：
 flex: <' flex-grow '> <' flex-shrink >'? || <' flex-basis '>
+扩展比率  收缩比率 设置或检索弹性盒伸缩基准值。
+如果所有子元素的基准值之和大于剩余空间，则会根据每项设置的基准值，按比率伸缩剩余空间
 flex-group:份数
 
     <div class="parent">

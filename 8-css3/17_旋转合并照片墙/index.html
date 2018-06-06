@@ -13,12 +13,17 @@
         }
         #container{
             height: 100%;
-            background: #999   ;
+            background: url("img/bg.jpg") 0 0 repeat;
+            position: relative;
         }
         .img{
             width: 125px;
             height: 125px;
             border:5px solid #fff;
+            position: absolute;
+            left:-135px;
+            top:-135px;
+            -webkit-transition: all 1.5s ease ;
         }
     </style>
 </head>
@@ -40,8 +45,10 @@
                     loadSuccess();
                 }
             };
-            oImg.src = 'img/thumbs/'+(i+1)+'.jpg';
+            oImg.src = 'img/thumbs/'+(i+1)+'.jpg'; //预加载，图片加载完在执行 oImg.onload函数
         }
+
+
         for(var i=0; i<24; i++){
             var oImg = new Image();
             oImg.onload = function(){
@@ -55,15 +62,36 @@
 
         var index = 0;
         function loadSuccess(){
+
+            /*为了生成元素放在左上角*/
             for(var i=0; i<4; i++){ //行
-                for(j=0; j<6;j++){  //列
+                for(var j=0;j<6;j++){  //列
                     index++;
                     var oDiv = document.createElement('div');
+                    oDiv.row=i;
+                    oDiv.col=j;
                     oDiv.className = 'img';
                     oDiv.style.background = 'url(img/thumbs/'+index+'.jpg)';
                     oContainer.appendChild(oDiv);
+
                 }
             }
+            //图片之间空隙
+            var  iSpaceX=(oContainer.offsetWidth -6*135)/7;
+            var  iSpaceY = (oContainer.offsetHeight - 4*135)/5;
+
+            /*改变元素的left top  若放在上方影响动画不运动*/
+            var aDiv = oContainer.getElementsByTagName('div');  //循环24个div 设置left  top
+            for(var k=0; k<aDiv.length; k++){
+                var oDiv =aDiv[k];
+                oDiv.style.transitionDelay = (23-k)*100+"ms";
+                oDiv.style.left = (oDiv.col+1)*iSpaceX+135*oDiv.col +"px";
+                oDiv.style.top =(oDiv.row+1)*iSpaceY+135*oDiv.row +"px";
+                //oDiv.style.left=(j+1)*iSpaceX+j*135+'px';
+                //oDiv.style.top=(i+1)*iSpaceY+i*135+'px';
+                oDiv.style.WebkitTransform = 'rotate('+(Math.random()-0.5)*40+'deg)';  // -20   20随机数
+            }
+
         }
 
 

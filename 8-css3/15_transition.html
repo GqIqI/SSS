@@ -12,9 +12,12 @@
             width: 200px;
             height: 200px;
             background: #ff0000;
-            /*-webkit-transition: width 2s ease 1s;*/
-            animation: run 2s ease 1s 2 forwards;
+            /*-webkit-transition: width 2s ease 1s;*/ //哪个属性  过度几秒 什么速度 延迟  必须有条件去触发
+            animation: run 2s ease 1s 2 forwards;//名 时间  运动方式 延迟时间 重复执行次数 forwards保持在最终属性
         }
+        /*#div1:hover{*/
+        /*width:500px;*/
+        /*}*/
 
         @keyframes run {
             50%{
@@ -27,9 +30,6 @@
                 width:1000px;
             }
         }
-        /*#div1:hover{*/
-            /*width:500px;*/
-        /*}*/
 
 
 
