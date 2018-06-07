@@ -204,15 +204,11 @@
                         clearInterval(timer);
                     }
                 },30);
-
-
             }
-
         }
 
 
-
-/*
+//另一种方法
 
         var oContent = document.getElementById('content');
         function loadSuccess(){
@@ -241,11 +237,11 @@
             var iTop = (document.body.offsetHeight - 135*4)/5;
             for(var i=0; i<24; i++){
                 var oDiv = aDiv[i];
-                /!* col 1  iLeft*1
+/*                 col 1  iLeft*1
                  col 2  ileft*2 + img宽
                  col 3  iLeft*3 + img宽*2
-                 col    col*iLeft + （col-1）*img宽
-                 *!/
+                 col    col*iLeft + （col-1）*img宽*/
+
                 oDiv.style.webkitTransitionDelay = (23-i)*100+"ms";
                 oDiv.style.left =  oDiv.pos.col*iLeft + (oDiv.pos.col-1) * 135 +'px';
                 oDiv.style.top =  oDiv.pos.row*iTop + (oDiv.pos.row-1) * 135 +'px';
@@ -313,7 +309,7 @@
             }
         }
 
-*/
+
 
     </script>
 
