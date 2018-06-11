@@ -6,7 +6,7 @@
 </head>
 <body>
     <!--json  javascript object notation-->
-
+//用javascript对象去描述的一种数据结构
     <script>
         var person = {
             "name":"zhangsan",
@@ -21,14 +21,16 @@
         console.log(person.name);
 
         var per2 = '{"name":"lisi","age":"10"}';
-//        per2.name
-        console.log(per2);
-        var person2 = JSON.parse(per2);//字符串=>json对象
+//        per2.name  // per2为一个字符串 取不到.name
+        console.log(per2); //  '{"name":"lisi","age":"10"}'
 
-        console.log(person2);
+
+        var person2 = JSON.parse(per2);//字符串=>json对象   对象可以打开
+
+        console.log(person2); // {"name":"lisi","age":"10"}
 //        person2.name
 
-        console.log(JSON.stringify(person)); //json对象=>字符串
+        console.log(JSON.stringify(person)); //json对象=>字符串   字符串打不开
 
 
 

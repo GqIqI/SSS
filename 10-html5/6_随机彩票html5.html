@@ -17,11 +17,11 @@
             arr.push( Math.floor(Math.random()*35)+1 );   //1 -36
         }
         oContent.innerHTML = arr;
-        history.pushState(arr,'');
-    }
+        history.pushState(arr,''); //生成历史记录
+    };
 
     window.onpopstate = function(e){
-        console.log(e.state);
+       // console.log(e.state);
         oContent.innerHTML = e.state;
 
     }

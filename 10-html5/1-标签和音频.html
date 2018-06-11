@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--html语义化
+        1.方便开发人员维护（给别人看方便  知道是啥）
+        2.有利于搜索引擎优化(给机器看  去爬东西)
+        尽量使用有意义的标签
+    -->
+    <form action="">
+        <input type="number" min="3" max="8" step="2" required pattern=""/>//min="3" max="8"最大最小值  step="2"一次加几
+                                                                            //required该项必填项   pattern可写正则表达式
+        <input type="email"/>
+        <input type="color"/>
+        <input type="range"/>//滑杆
+        <input type="date"/>
+        <input type="submit" value="click"/>
+        <input type="text" placeholder="请输入用户名" autofocus="autofocus"/>//placeholder默认值 autofocus自动获取焦点
+
+
+        Webpage: <input type="url" list="url_list" name="link" />  //input和datalist 组合用
+        <datalist id="url_list">
+            <option label="W3School" value="http://www.w3school.com.cn" />
+            <option label="Google" value="http://www.google.com" />
+            <option label="Microsoft" value="http://www.microsoft.com" />
+        </datalist>
+        <input type="submit" />
+    </form>
+
+    // Ogg 文件，适用于Firefox、Opera 以及 Chrome 浏览器。
+    //要确保适用于 Safari 浏览器，音频文件必须是 MP3 或 Wav 类型。
+    // audio 元素允许多个 source 元素。source 元素可以链接不同的音频文件。浏览器将使用第一个可识别的格式
+    <audio controls="controls">
+        <source src="song.ogg" type="audio/ogg">
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+//视频
+    <video width="320" height="240" controls="controls" loop="loop" preload="auto">//循环播放 加载
+        <source src="movie.ogg" type="video/ogg">
+        <source src="movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <div id="div1" class="aa bb cc">dfghj</div>
+    <script>
+       /* document.querySelector('#div1');
+        document.querySelector('li'); //第一个li
+        document.querySelectorAll('li');//所有li*/
+
+        var oDiv1 = document.querySelector('#div1');
+        console.log(oDiv1.className);//字符串
+        console.log(oDiv1.classList);//数组
+//       oDiv1.className = 'aa bb cc dd'
+//        oDiv1.classList.add('dd');//加类
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
