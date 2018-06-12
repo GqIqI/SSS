@@ -44,7 +44,7 @@
          console.log(person2.father.name);  //zxx  出问题了  浅克隆
 */
 
-        for(key in obj){
+        for( key in obj){
             if(obj[key] instanceof Object){
                 resObj[key] = clone(obj[key]);  //还是对象 继续递归
             }else{
@@ -60,16 +60,16 @@
             name:"zz"
         }
     };
-    var person2 = clone(person1);
+    var person3 = clone(person1);
     person1.father.name = 'zxx';
-    console.log(person2.father.name);//zz  深克隆
+    console.log(person3.father.name);//zz  深克隆
 
 
 
 //深克隆
 var str = JSON.stringify(person1); //字符串
-    var person2 = JSON.parse(str);//对象
-
+    var person4 = JSON.parse(str);//对象
+    console.log(person4.father.name)
 
 
 
