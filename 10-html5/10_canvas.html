@@ -22,20 +22,20 @@
     </canvas>
     <script>
         var oCvs = document.querySelector('#cvs');
-        var oCtx = oCvs.getContext("2d");
-        oCtx.beginPath();
-        oCtx.moveTo(100,100);
-        oCtx.lineTo(300,300);
+        var oCtx = oCvs.getContext("2d");//取到这个环境
+        oCtx.beginPath();//起始新路径
+        oCtx.moveTo(100,100); //笔放到哪
+        oCtx.lineTo(300,300);//画到哪
         oCtx.lineTo(100,300);
 //        oCtx.lineTo(100,100);
-        oCtx.closePath();
+        oCtx.closePath();//回到新路径原点
         oCtx.lineWidth = 10;
         oCtx.strokeStyle = 'red';
-        oCtx.stroke();
+        oCtx.stroke();//显示出来  相当于描边
        /* oCtx.beginPath();
         oCtx.moveTo(200,100);
         oCtx.lineTo(450,450);
-        oCtx.lineWidth = 5;
+        oCtx.lineWidth = 5;//线宽
         oCtx.strokeStyle = 'blue';
         oCtx.stroke();*/
 
@@ -49,16 +49,19 @@
         oCtx.lineWidth = 5;
         oCtx.strokeStyle = 'blue';
         oCtx.stroke();
-        oCtx.fillStyle = "yellow";
+        oCtx.fillStyle = "yellow";//填充
         oCtx.fill();*/
-
+        oCtx.rect(20,40,100,300);//  矩形x.y.宽。高
+        oCtx.arc(100,100,50, 1.1 * Math.PI,2* Math.PI,false);
+      //  oCtx.arc(x, y, radius, startAngle, endAngle, antiClockwise);
+        // 中心点、半径、起始角度（弧度n*Math.PI）、结束 角度（弧度m*Math.PI）和绘图方向（顺时针 false 还是逆时针 true ）
+//      弧度=角度*Π/180
         var oImg = new Image();
 
         oImg.onload = function(){
             oCtx.drawImage(oImg,0,0,400,400);
         }
         oImg.src= '2.jpg';
-
 
 
 

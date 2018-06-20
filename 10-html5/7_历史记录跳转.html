@@ -50,7 +50,7 @@
             $('html,body').animate({  //animate CSS属性值是逐渐改变的，这样就可以创建动画效果。
                 scrollTop:Top //scrollTop() 方法设置或返回被选元素的垂直滚动条位置。
             });
-            history.pushState(Top,'');
+            history.pushState(Top,'');//生成历史记录
             return false;  //阻止跳转 锚点不起作用
         });
 

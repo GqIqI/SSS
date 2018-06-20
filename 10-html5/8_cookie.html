@@ -15,7 +15,7 @@
     document.cookie = 'skin=skin_0';
 
     console.log(document.cookie);*/
-    function setCookie(key, value, expires){
+    function setCookie(key, value, expires){ //expires保存时间
         var str = key +"="+value+';';
         if(expires){
             var date = new Date();

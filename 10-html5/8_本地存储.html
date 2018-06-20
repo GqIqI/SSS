@@ -6,12 +6,19 @@
 </head>
 <body>
 <script>
+    //三者区别
+    //sessionStorage   当前会话有效 ，浏览器关掉失效   5M    不携带
+    //localStorage  一直有效 除非用户手动清除          5M    不携带
+    //cookie   可以自己设置过期时间（生存周期）        4k   值会发送给后台 随Http请求一起携带
+    // 相同点 都是本地存储
+    //不同： 过期时间 存储大小
     /*sessionStorage.name = 'aa';
-    sessionStorage.age = '111';*/
-//    localStorage.name = 'zzz';
+    sessionStorage.age = '111';*/  //浏览器关掉就不好使了
+//    localStorage.name = 'zzz';  //一直在  除非用户清除
 
-    /*sessionStorage.setItem('name','zhangsan');
-    sessionStorage.setItem('age','111');*/
+    sessionStorage.setItem('name','zhangsan');
+    sessionStorage.setItem('age','111');
+     sessionStorage.getItem('age'); //返回111
 //    sessionStorage.removeItem('name');
 //    sessionStorage.clear();
 
