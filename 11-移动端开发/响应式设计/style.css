@@ -17,7 +17,8 @@
         background: #00f;
     }
 }
-@media screen and (orientation:landscape){
+
+@media screen and (orientation:landscape){ /*设备方向横屏*/
     #div1{
         background:#E31559;
     }
