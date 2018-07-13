@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    width: 960px;
+    height: 100px;
+    background: #eee;
+    margin: 50px auto ;
+    line-height: 100px;
+    text-align: center ;
+}
+
+.images{
+    width: 960px;
+    margin: 50px auto 0px;
+}
+.images img{
+    width: 960px;
+    display: block;
+}
+.content{
+    width: 960px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.content div{
+     height: 300px;
+     display: table; /*多行居中 三部 display:table-cell ; vertical-align: middle;*/
+ }
+.content  p{
+    display:table-cell ;
+    text-align: center ;
+    vertical-align: middle; /*多行居中 三部 display:table-cell ; vertical-align: middle;  其父元素要  display: table; */
+}
+.images .img_小,.images .img_中{
+    display: none;
+}
+.content .left{
+    width: 630px;
+    background: #31b0d5 ;
+    float: left;
+    display: table;/*多行居中 三部 display:table-cell ; vertical-align: middle;*/
+}
+.content .right {
+    width: 300px;
+    background: orange ;
+    float: right;
+}
+@media screen and (min-width: 960px) {
+    .images .img_大{
+        display: block;
+    }
+    .images .img_小,.images .img_中{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    h2{
+        width:100%
+    }
+
+    .images {
+        width:100%
+    }
+    .images .img_中{
+        display: block;
+        width:100%
+    }
+    .images .img_大,.images .img_小{
+        display: none;
+
+    }
+    .content {
+        width:100%
+    }
+    .content .left{
+        width: 66%;
+    }
+    .content .right {
+        width: 31%;
+    }
+
+}
+
+@media screen and (max-width:480px) {
+    .images .img_小{
+        display: block;
+        width:100%
+    }
+    .images .img_大,.images .img_中{
+        display: none;
+    }
+    .content .left{
+        width: 100%;
+    }
+    .content .right {
+        width: 100%;
+    }
+
+}

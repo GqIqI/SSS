@@ -4,12 +4,12 @@
 }
 
 
-@media screen and (orientation:landscape){
+@media screen and (orientation:landscape){/*设备方向横屏*/
     #div1{
         background: #000000;
     }
 }
-@media screen and (orientation:portrait){
+@media screen and (orientation:portrait){ /*竖屏*/
     #div1{
         background: #0000ff;
     }
