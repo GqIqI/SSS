@@ -31,6 +31,46 @@
     <script src="jquery-1.12.4.js"></script>
     <script src="jquery.mobile-1.4.5.min.js"></script>
     <script>
+
+        /*tap点透： 上下两层 上边元素ta'p 点击隐藏
+        *            下层是click  就会触发两层   a input 直接执行  为tap点透
+        *
+        *            原因:zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，
+                     并且tap事件是冒泡到document上触发的！！！而在冒泡到document之前
+                     ，用户手的接触屏幕(touchstart)和离开屏幕(touchend)是会触发click事件的,
+                     因为click事件有延迟触发(这就是为什么移动端不用click而用tap的原因)(
+                     大概是300ms,为了实现safari的双击事件的设计)，所以在执行完tap事件之后，
+                     弹出来的选择组件马上就隐藏了，此时click事件还在延迟的300ms之中，当300ms到来的时候，
+                     click到的其实不是完成而是隐藏之后的下方的元素，
+                     如果正下方的元素绑定的有click事件此时便会触发，
+
+         阻止点透:
+                     1\ouchstart->touchend->click。亦即click的触发是有延迟的，这个时间大概在300ms左右。
+                     .on('touchstart',function(){
+                                 e.preventDefault();   阻止点透
+                                  /!*   $('#div2').on('touchstart',function(){
+                                     console.log('divtap');
+                                     $('#div2').hide();
+                                     });
+                                     $('#div1').on('click',function(){
+                                     console.log('div2 click');
+                                     });
+                                 })
+                     2\引入fastclick.js，因为fastclick源码不依赖其他库所以你可以在原生的js前直接加上FastClick.attach(doucument.body)
+                     3\用touchend代替tap事件并阻止掉touchend的默认行为preventDefault()
+                     4\延迟一定的时间(300ms+)来处理事件
+
+         */
+
+        $('#div2').on('tap',function(){
+            console.log('divtap');
+            $('#div2').hide();
+        });
+        $('#div1').on('click',function(){
+            console.log('div2 click');
+        });
+
+/*
         $('#div1').on('tap',function(){
             console.log('div1111');
         });
@@ -39,7 +79,18 @@
             console.log('div22222');
             e.preventDefault();
         });
+*/
 
+
+
+   /*     $('#div2').on('tap',function(e){
+            $(this).hide();
+            console.log('div22222');
+            e.preventDefault(); //阻止下面的click事件
+        });
+        $('#div1').on('tap',function(){
+            console.log('div1111');
+        });*/
         //tap事件    上边元素 点击隐藏
         //fastclick.js
 

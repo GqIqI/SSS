@@ -5,31 +5,29 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title></title>
-    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>  //没有loading
     <style>
         *{
             margin: 0;
             padding: 0;
         }
-        /*.ui-mobile .ui-page {
-            height: 100%;
-        }*/
+
         .img{
             width: 25%;
             float: left;
             border-right:2px solid #000;
             border-bottom:2px solid #000;
-            -webkit-box-sizing: border-box;
+            -webkit-box-sizing: border-box; //怪异盒模型  内容变小 框不变
+            display: block;
         }
         #img-box{
-            /*background: #000000;*/
             position: absolute;
             top:0;
             right: 0;
             bottom: 0;
             left:0;
-            background:#000 url("img/1.jpg") center center no-repeat;
-            background-size: contain;
+            background:pink url("img/1.jpg") center center no-repeat;
+            background-size:contain ;
             display: none;
         }
 
@@ -54,18 +52,15 @@
             iNow = idx;
             $('#container').hide();
             $('#img-box').show().css('background-image','url(img/'+(idx+1)+'.jpg)');
-//            console.log(1111);
             e.preventDefault();
         });
         $('#img-box').on('tap',function(e){
             $('#container').show();
             $('#img-box').hide();
-//            console.log(2222);
             e.preventDefault();
         });
 
-        $('#img-box').on('swipeleft',function(){
-            console.log(iNow);
+        $('#img-box').on(' swipeleft ',function(){
             iNow++;
             if(iNow == $('.img').length){
                 iNow = 0;

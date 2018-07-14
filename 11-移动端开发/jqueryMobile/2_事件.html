@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title></title>
+
     <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
     <style>
         #div2{
@@ -25,28 +26,32 @@
     <script src="jquery.mobile-1.4.5.min.js"></script>
 
     <script>
-        //click  300ms
-  /*     $('#div2').on('click',function(){
+        //click  300ms延迟 为了区分单击双击   tap没有
+     /*
+       $('#div2').on('click',function(){
             console.log(1111);
         });
-        $('#div2').on('tap',function(){
+        $('#div2').on('tap',function(){ //点击事件移动端使用
             console.log(222);
-        });*/
-        //touchstart touchend  touchmove touchcancel
-        /* $('#div2').on('touchstart',function(){
-            console.log(222);
+        })
+      */
+
+        //touchstart触摸   touchend点击  touchmove 移动 touchcancel  取消
+    /*     $('#div2').on('touchstart',function(){
+            console.log(222);//开始触碰
         });
         $('#div2').on('touchend',function(){
             console.log(11);
-        });*/
-        $('#div2').on('swipe',function(){
-            console.log(222);
         });
-        $('#div2').on('swipeleft',function(){
+*/
+
+
+       /* $('#div2').on('swipe',function(){
+            console.log(222);
+        });*///左滑
+        $('#div2').on( 'swipeleft',function(){
             console.log('left');
         });
-
-
 
 
 
