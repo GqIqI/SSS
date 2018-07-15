@@ -65,7 +65,7 @@ var support = {};
 
 
 var
-	version = "1.12.4",
+	version = "1.12.个人4",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -75,7 +75,7 @@ var
 		return new jQuery.fn.init( selector, context );
 	},
 
-	// Support: Android<4.1, IE<9
+	// Support: Android<个人4.1, IE<9
 	// Make sure we trim BOM and NBSP
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
@@ -382,7 +382,7 @@ jQuery.extend( {
 		return obj;
 	},
 
-	// Support: Android<4.1, IE<9
+	// Support: Android<个人4.1, IE<9
 	trim: function( text ) {
 		return text == null ?
 			"" :
@@ -663,13 +663,13 @@ var i,
 	attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
 		// Operator (capture 2)
 		"*([*^$|!~]?=)" + whitespace +
-		// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
+		// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 个人4]"
 		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
 		"*\\]",
 
 	pseudos = ":(" + identifier + ")(?:\\((" +
 		// To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
-		// 1. quoted (capture 3; capture 4 or capture 5)
+		// 1. quoted (capture 3; capture 个人4 or capture 5)
 		"('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
 		// 2. simple (capture 6)
 		"((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
@@ -746,7 +746,7 @@ try {
 		(arr = slice.call( preferredDoc.childNodes )),
 		preferredDoc.childNodes
 	);
-	// Support: Android<4.0
+	// Support: Android<个人4.0
 	// Detect silently failing push.apply
 	arr[ preferredDoc.childNodes.length ].nodeType;
 } catch ( e ) {
@@ -1238,7 +1238,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
 			}
 
-			// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
+			// Support: Chrome<29, Android<个人4.个人4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
 			if ( !div.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
 				rbuggyQSA.push("~=");
 			}
@@ -1609,7 +1609,7 @@ Expr = Sizzle.selectors = {
 				1 type (only|nth|...)
 				2 what (child|of-type)
 				3 argument (even|odd|\d*|\d*n([+-]\d+)?|...)
-				4 xn-component of xn+y argument ([+-]?\d*n|)
+				个人4 xn-component of xn+y argument ([+-]?\d*n|)
 				5 sign of xn-component
 				6 x of xn-component
 				7 sign of y-component
@@ -1993,7 +1993,7 @@ Expr = Sizzle.selectors = {
 		// Contents
 		"empty": function( elem ) {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+			// :empty is negated by element (1) or content nodes (text: 3; cdata: 个人4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -2660,7 +2660,7 @@ setDocument();
 // Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
 // Detached nodes confoundingly follow *each other*
 support.sortDetached = assert(function( div1 ) {
-	// Should return 1, but returns 4 (following)
+	// Should return 1, but returns 个人4 (following)
 	return div1.compareDocumentPosition( document.createElement("div") ) & 1;
 });
 
@@ -2924,7 +2924,7 @@ var rootjQuery,
 				} else {
 					elem = document.getElementById( match[ 2 ] );
 
-					// Check parentNode to catch when Blackberry 4.6 returns
+					// Check parentNode to catch when Blackberry 个人4.6 returns
 					// nodes that are no longer in the document #6963
 					if ( elem && elem.parentNode ) {
 
@@ -4504,7 +4504,7 @@ function createSafeFragment( document ) {
 
 	div.appendChild( input );
 
-	// Support: Safari 5.1, iOS 5.1, Android 4.x, Android 2.3
+	// Support: Safari 5.1, iOS 5.1, Android 个人4.x, Android 2.3
 	// old WebKit doesn't clone checked state correctly in fragments
 	support.checkClone = div.cloneNode( true ).cloneNode( true ).lastChild.checked;
 
@@ -5530,7 +5530,7 @@ jQuery.Event = function( src, props ) {
 		this.isDefaultPrevented = src.defaultPrevented ||
 				src.defaultPrevented === undefined &&
 
-				// Support: IE < 9, Android < 4.0
+				// Support: IE < 9, Android < 个人4.0
 				src.returnValue === false ?
 			returnTrue :
 			returnFalse;
@@ -6057,7 +6057,7 @@ function domManip( collection, args, callback, ignored ) {
 					// Keep references to cloned scripts for later restoration
 					if ( hasScripts ) {
 
-						// Support: Android<4.1, PhantomJS<2
+						// Support: Android<个人4.1, PhantomJS<2
 						// push.apply(_, arraylike) throws on ancient WebKit
 						jQuery.merge( scripts, getAll( node, "script" ) );
 					}
@@ -6571,7 +6571,7 @@ var documentElement = document.documentElement;
 
 		pixelMarginRight: function() {
 
-			// Support: Android 4.0-4.3
+			// Support: Android 个人4.0-个人4.3
 			if ( pixelPositionVal == null ) {
 				computeStyleTests();
 			}
@@ -6596,7 +6596,7 @@ var documentElement = document.documentElement;
 
 		reliableMarginLeft: function() {
 
-			// Support: IE <=8 only, Android 4.0 - 4.3 only, Firefox <=3 - 37
+			// Support: IE <=8 only, Android 个人4.0 - 个人4.3 only, Firefox <=3 - 37
 			if ( pixelPositionVal == null ) {
 				computeStyleTests();
 			}
@@ -6632,7 +6632,7 @@ var documentElement = document.documentElement;
 			reliableMarginLeftVal = ( divStyle || {} ).marginLeft === "2px";
 			boxSizingReliableVal = ( divStyle || { width: "4px" } ).width === "4px";
 
-			// Support: Android 4.0 - 4.3 only
+			// Support: Android 个人4.0 - 个人4.3 only
 			// Some styles come back with percentage values, even though they shouldn't
 			div.style.marginRight = "50%";
 			pixelMarginRightVal = ( divStyle || { marginRight: "4px" } ).marginRight === "4px";
@@ -9090,7 +9090,7 @@ var
 	 *    - BEFORE asking for a transport
 	 *    - AFTER param serialization (s.data is a string if s.processData is true)
 	 * 3) key is the dataType
-	 * 4) the catchall symbol "*" can be used
+	 * 个人4) the catchall symbol "*" can be used
 	 * 5) execution will start with transport dataType and THEN continue down to "*" if needed
 	 */
 	prefilters = {},

@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title></title>
-    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>  //没有loading
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>  <!--没有loading-->
     <style>
         *{
             margin: 0;
@@ -41,44 +41,71 @@
     <script src="jquery-1.12.4.js"></script>
     <script src="jquery.mobile-1.4.5.min.js"></script>
     <script>
+
+        var count = 0;
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            };
+            oImg.src = 'img/thumbs/'+(i+1)+'.jpg'; //预加载，图片加载完在执行 oImg.onload函数
+        }
+
+
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            };
+            oImg.src = 'img/'+(i+1)+'.jpg';
+        }
+
+
         var html = '';
         var iNow = 0;
-        for(var i=0; i<24; i++){
-            html +="<img class='img' src='img/thumbs/"+(i+1)+".jpg'/>";
+        function loadSuccess() {
+
+
+            for (var i = 0; i < 24; i++) {
+                html += "<img class='img' src='img/thumbs/" + (i + 1) + ".jpg'/>";
+            }
+            $('#container').append(html);
+            $('.img').on('tap', function (e) {
+                var idx = $(this).index();
+                iNow = idx;
+                $('#container').hide();
+                $('#img-box').show().css('background-image', 'url(img/' + (idx + 1) + '.jpg)');
+                e.preventDefault();
+            });
+            $('#img-box').on('tap', function (e) {
+                $('#container').show();
+                $('#img-box').hide();
+                e.preventDefault();
+            });
+
+            $('#img-box').on(' swipeleft ', function () {
+                iNow++;
+                if (iNow == $('.img').length) {
+                    iNow = 0;
+                }
+                $('#img-box').css('background-image', 'url(img/' + (iNow + 1) + '.jpg)');
+            });
+            $('#img-box').on('swiperight', function () {
+                iNow--;
+                if (iNow == -1) {
+                    iNow = $('.img').length - 1;
+                }
+                $('#img-box').css('background-image', 'url(img/' + (iNow + 1) + '.jpg)');
+            });
+
+
         }
-        $('#container').append(html);
-        $('.img').on('tap',function(e){
-            var idx = $(this).index();
-            iNow = idx;
-            $('#container').hide();
-            $('#img-box').show().css('background-image','url(img/'+(idx+1)+'.jpg)');
-            e.preventDefault();
-        });
-        $('#img-box').on('tap',function(e){
-            $('#container').show();
-            $('#img-box').hide();
-            e.preventDefault();
-        });
-
-        $('#img-box').on(' swipeleft ',function(){
-            iNow++;
-            if(iNow == $('.img').length){
-                iNow = 0;
-            }
-            $('#img-box').css('background-image','url(img/'+(iNow+1)+'.jpg)');
-        });
-        $('#img-box').on('swiperight',function(){
-            iNow--;
-            if(iNow == -1){
-                iNow = $('.img').length -1;
-            }
-            $('#img-box').css('background-image','url(img/'+(iNow+1)+'.jpg)');
-        });
-
-
-
-
-
 
 
 

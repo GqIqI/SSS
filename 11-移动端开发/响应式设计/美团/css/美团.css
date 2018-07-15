@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: .28em;
+    line-height: 1;
+    color: #333;
+    background-color: #f0efed;
+}
+.banner{
+    height: 1.02rem;
+    background: #06c1ae;
+    display: flex;
+    flex-direction:row;
+    line-height: 1.02rem;
+    border-bottom: 0.007rem  solid #21897d;
+
+}
+.banner-left{
+    width: 1.67rem;
+    height: 1.01rem;
+   padding: 0 0.15rem;
+    box-sizing: border-box;
+}
+.banner-center{
+    flex: 1;
+    height:0.64rem ;
+    background: rgba(0,0,0,.15);
+    border-radius: 0.1rem;
+    line-height: 0.64rem;
+    margin-top: 0.19rem;
+
+}
+.banner-center input{
+    outline: none;
+    border: none;
+    background: transparent ;
+    width: 3rem;
+    color: white;
+}
+.banner-center input::-webkit-input-placeholder
+{
+    color:gainsboro;
+}
+.banner-center .search{
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0.6rem;
+    text-align:center;
+}
+
+.banner-right{
+    height:1.01rem;
+    width: 0.94rem;
+    color: #fff;
+    text-align: center;
+    font-size: .2rem;
+
+}
+.banner-right .text-icon {
+    display: block;
+    font-size: .4rem;
+    font-weight: 700;
+    height: 0.4rem;
+    width: 0.4rem;
+    margin-left: 0.25rem;
+    margin-top: -0.1rem;
+
+}
+.img-box{
+    height: 1.88rem;
+    background: url("../images/banner.png ") center center no-repeat ;
+    background-size: contain ;
+}
+.img-box img{
+    width: 100%;
+    height: 1.88rem;
+}
+.content{
+    width: 6.4rem;
+    height: 3.6rem;
+    font-size: 0;
+    background: white ;
+    margin-top: 0.03rem;
+    border-bottom: 0.01rem solid #DDD8CE;
+}
+.nav li{
+    display: inline-block;
+    width: 20%;
+    height: 1.62rem;
+   /* background: pink ;*/
+}
+.nav a{
+    display: block;
+    text-align: center ;
+    font-size: .24rem;
+    margin-top: 0.2rem;
+}
+.nav i{
+    display:inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 100%;
+    background:orange;
+    text-align: center ;
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+}
+.nav span{
+    display: block;
+    color: black;
+    margin-top: 0.15rem;
+}
+.point{
+    height: 0.28rem;
+text-align:center;
+
+}
+.point .active{
+    display: inline-block;
+    width: .16rem;
+    height: .16rem;
+    border-radius: 50%;
+    background:#F0EFED;
+    margin:0.04rem 0.18rem;
+}
+.point .color{
+    background: #06c1ae;
+}
+.list{
+    height: 2.26rem;
+    background: white ;
+    margin-top: 0.2rem;
+    display: flex;
+    padding: 0.12rem;
+    border-top: 0.01rem solid #DDD8CE;
+    border-bottom: 0.01rem solid #DDD8CE;
+}
+.list img{
+    height:1.24rem ;
+}
+.list strong {
+    display: block;
+    font-size: .3rem;
+    margin-top: .12rem;
+    margin-bottom: .36rem;
+    font-weight: bold;
+    margin-left: -0.4rem;
+}
+.list small{
+    font-size: smaller;
+    color: #666;
+}
+.list-1 strong{
+    color: #55a40f;
+}
+.list-2 strong{
+    color: #ff3f0d;
+}
+.list-2 small{
+    margin-left: -0.45rem;
+}
+.list-3 strong{
+    color:#f742a0;
+}
+.list-1 ,.list-2,.list-3{
+    flex: 1;
+    border-left: 1px solid #ddd8ce ;
+    text-align: center ;
+}
+.list-1{
+    border-left:none ;
+}
+.final {
+    width: 6.4rem;
+    background: white ;
+    margin-top: 0.2rem;
+    border-top: 0.01rem solid #DDD8CE;
+    border-bottom: 0.01rem solid #DDD8CE;
+}
+.items{
+    width: 6.2rem;
+    margin-left: 0.2rem;
+    display: flex;
+    flex-direction: column;
+}
+.items img{
+    width: 1.8rem;
+    height: 1.8rem;
+}

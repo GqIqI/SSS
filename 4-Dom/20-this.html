@@ -27,7 +27,7 @@
     1.定时器中this指向window
     2.函数中this指向window
     3.事件中 this对当前对象的引用
-    4.对象 this对当前对象的引用
+    个人4.对象 this对当前对象的引用
     */
 
 
@@ -49,9 +49,9 @@
           console.log(this.name);
       }
       //改变this指向
-      aa.call(person,4,5);
-      aa.apply(person,[4,5]);
-      aa.bind(person,4,5)();*/
+      aa.call(person,个人4,5);
+      aa.apply(person,[个人4,5]);
+      aa.bind(person,个人4,5)();*/
     //3.事件中 this对当前对象的引用
     var oDiv = document.getElementById('div1');
     oDiv.onclick = function(){
@@ -65,7 +65,7 @@
          }.bind(this),1000);//bind方法生成了一个新的函数，称为绑定函数，传入bind方法的第一个參数作为这个绑定函数的this对象
         //this值仍为-this
     };
-    //4.对象 this对当前对象的引用
+    //个人4.对象 this对当前对象的引用
      var cat = {
          name:'mimi',
          age:3,

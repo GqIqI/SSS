@@ -6,7 +6,7 @@ require(['Carousel'],function(Carousel){
 
     carousel1.init({
         selector:'#content1',
-        imgDate:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'],
+        imgDate:['img/1.jpg','img/2.jpg','img/3.jpg','img/个人4.jpg'],
         buttonType:'squire',//circle squire
         btnPos:'bottom', //center bottom
         speed:'2000'
@@ -15,7 +15,7 @@ require(['Carousel'],function(Carousel){
 
     carousel2.init({
         selector:'#content2',
-        imgDate:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'],
+        imgDate:['img/1.jpg','img/2.jpg','img/3.jpg','img/个人4.jpg'],
         buttonType:'circle',//circle squire
         btnPos:'center', //center bottom
         speed:'1000'
