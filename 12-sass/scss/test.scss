@@ -1,0 +1,142 @@
+@charset "utf-8";
+@import "common.scss";
+$color:#fff;
+$a:"head";
+/*body{
+  background: $color;
+}*/
+.#{$a}{
+  background: $color;
+}
+.head-logo{
+  width: 10px;
+  height: 30px;
+  background: url("#{$a}.jpg");
+}
+.head{
+  width: 200px;
+  margin: 0 auto ;
+  .logo{
+    width: 10px;
+    height: 30px;
+    float: left;
+    a{
+      text-decoration: none ;
+      &:hover{
+        color: #2e6da4;
+        }
+      }
+    a:hover{
+      color: #2e6da4;
+    }
+  }
+}
+@mixin boder(){
+  border: 2px solid #ccc;
+  box-shadow:0 0 3px 2px rgba(0,0,0,0.5);
+}
+.aa{
+  width: 200px;
+  height: 200px;
+  @include boder();
+}
+.bb{
+  width: 200px;
+  height: 200px;
+  @include boder();
+}
+
+@mixin boder($col:#ccc){
+  border: 2px solid $col;
+  box-shadow:0 0 3px 2px rgba(0,0,0,0.5);
+}
+.cc{
+  width: 200px;
+  height: 200px;
+  @include boder(blue);
+}
+.dd{
+  width: 200px;
+  height: 200px;
+  @include boder(orange);
+}
+@mixin css3($attr,$val) {
+  -webkit-#{$attr}: $val;
+  -o-#{$attr}: $val;
+  -moz-#{$attr}: $val;
+  -ms-#{$attr}: $val;
+  #{$attr}: $val;
+}
+.ee {
+  @include css3(border-radius,30px);
+}
+@mixin arrow($width,$col,$dir){  //传参
+  border-style : solid;
+  border-width :$width;
+  @if($dir==left){
+    border-color : transparent $col transparent transparent ;
+  }
+  @if($dir==right){
+    border-color : transparent transparent transparent $col  ;
+  }
+  @if($dir==up){
+    border-color : transparent transparent $col transparent ;
+  }
+  @if($dir==bottom){
+    border-color : $col transparent transparent transparent ;
+  }
+
+  width: 0;
+  height: 0;
+}
+.ff{
+  @include arrow(20px,green,left); //继承
+}
+.kk{
+  @extend .ff;
+  background: paleturquoise ;
+}
+%gg{ //占位符
+  width: 20px;
+  height: 40px;
+  background: darkgray ;
+  font-size: abs(30);
+}
+.ii{
+  @extend  %gg
+}
+a{
+  color: #9d0000;
+  &:hover{
+    color: lighten(#9d0000,20%);//变浅
+  }
+}
+@function add($x,$y){
+   @return $x+$y;
+}
+.j{
+//  width: add(3,5px);
+  height: 3*6px;
+  width: (6px/2);
+  font-size: (6/3)px;
+}
+@for $i from 1 through 3{ /*to不包括第一个*/
+  .item#{$i}{
+    width: 20px*$i;
+  }
+}
+$j:5;
+@while($j<10){
+.a#{$j}{
+  width:20*$j;
+}
+  $j:$j+2;
+}
+
+$icon:error warn right;
+@each $val in $icon{
+  .#{$val}{
+    background: url("#{$val}.jpg");
+  }
+}
+
