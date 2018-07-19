@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //模板字符串 `${}`
+       /*  
+        let a = 'hello';
+        let str1 = 'aasdf'+
+                'atysf '+a+' hjk';
+        console.log(str1); //aasdfatysf hello hjk
+ */
+ /*   
+        let a = 'hello';
+        let x = 10;
+        let y = 20;
+        let str = `aaaaa x+y=${x+y} bbb
+        bbb ygfuydf`;
+        console.log(str);// aaaaa x+y=30 bbb
+                         //  bbb ygfuydf
+ */
+
+      var str='aafh';
+     /*     console.log(str.includes('s')); //false   返回对错    是否包含
+      //indexOf('s');   返回索引
+     // console.log(str.startsWith('abc')) ; */ //false   返回对错    是否从什么开始
+     // console.log(str.endsWith('abc')); //false   返回对错    是否已什么结束
+     var str2=str.padStart(10,'xxx') //以xxx开始 共10个字符
+     console.log(str2);
+     /*  let str3=str.padEnd(10,'abc') //以abac结束 共10个字符
+      console.log(str3);
+      console.log(str.repeat(2));//重复几次 */
+
+//类下的方法可被所有实例化对象共享
+  /*    
+      function st(str1,str){
+        if(str1.indexOf(str)==0);{
+               return true;
+        }
+        return false;
+
+      }
+      console.log(st('aaffsgs','df'));
+  */
+
+//封装startsWith和endsWith
+/*  String.prototype.sw=function(str){
+    if(this.indexOf(str)==0){
+        return true;
+    }
+    else
+    return false;
+ }
+ str1='aaafsshtdj';
+ console.log(str1.sw('aadd')); */
+
+ String.prototype.ew=function(str){
+     if(this.lastIndexOf(str)+str.length==this.length){
+        return true;
+    }
+    else
+    return false;
+ }
+ str1='aaafsshtdj';
+ console.log(str1.ew('dj'));
+
+    </script>
+
+
+</body>
+</html>
