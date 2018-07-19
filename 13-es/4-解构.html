@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* 从数组和对象中提取值，对变量进行赋值，这被称为解构
+            数组解构
+            对象解构
+            字符串解构
+  应用:函数参数的解构赋值\函数返回值\变量互换\Json应用
+*/
+//1、 数组解构   
+        /*
+         let arr = [1,2,3];
+        let [a,b,c] = arr;// let [a,b,c] = [1,2,3];
+        console.log(a,b,c);  //1 2 3 
+        */
+
+
+       /*  var arr1 = [1,2,3];
+          var a = arr1[0];
+          var b = arr1[1];
+          var c = arr1[2];
+       */
+
+        /* 
+        let [a,b,[e,f],d] = [1,2,[3,4],5];
+        console.log(a,b,d,e,f); //1 2 5 3 4
+        */
+
+//2、 对象解构
+    /*
+        let obj = {
+            name:'zs',
+            age:20
+        }
+        let {name:aa,age:bb} = obj;
+        console.log(aa,bb);  //zs  20
+     */
+
+//3、函数参数的解构赋值
+        /* function aa([x,y,z]){
+            console.log(x , y , z);   
+        }
+
+        let arr = ['a','b','c'];
+        aa(arr);  //a b c
+        */
+
+//4、函数返回值
+      /*
+       function bb(){
+            let arr = [1,2,3];
+            return arr;
+        }
+        let [a,b,c] = bb();
+        console.log(a , b , c)   //1 2 3; 
+       */
+//5、函数参数的解构赋值
+       /*  
+         function cc({name,age}){
+            console.log(name,age);
+         }
+        var person = {
+            name:'zs',
+            age:10
+        };
+        cc(person);//zs 10
+         */
+
+//6、变量互换
+       /*  let a = 5;
+        let b = 6; */
+      /*   let c = a;
+        a  = b;
+        b = c;
+
+        a = a+b;
+        b = a-b;
+        a = a-b;
+
+        a = [a,b];
+        b = a[0];
+        a = a[1]; 
+
+        [b,a] = [a,b];*/
+        // b = [a, a=b][0];
+        // [1,2,c=3]
+
+//7、 字符串解构
+       /*  let str = 'abcdef' ;
+
+        let [a,b,c,d] = str ;
+
+        str.charAt(0);
+
+        str[0];
+
+        console.log(a,b,c,d);
+ */
+//8、Json应用
+        var str = '{"name":"zhangsan","age":"20"}';
+        var {name:aa,age:bb} = str //undefined undefined   /* JSON.parse(str) */;
+        console.log(aa,bb);//zhangsan 20
+
+
+
+
+    </script>
+</body>
+</html>
