@@ -8,7 +8,9 @@
 </head>
 <body>
 
-
+ <!-- 监测对象  当对象属性改变或被调用  做某些操作
+      监测函数，当函数被调用  做某些操作     
+-->
     <script>
         let fn = function(a){
             console.log('fn...')
@@ -30,14 +32,17 @@
         var pro = new Proxy(fn,{
             apply(){
                 if(用户没有登录){
-                    Reflect.apply(...arguments); //调用fn
+                    Reflect.apply(...arguments); //  执行apply    调用fn  
+                                            // 参数列表(arguments) ，参数列表可以是数组，或类似数组的对象。
                 }
             }
         })
         pro();
-
-
-
+//Reflect.apply() 通过指定的参数列表发起对目标(target)函数的调用。
+//Reflect.apply(target, thisArgument, argumentsList)
+//target  目标函数。
+//thisArgument  target函数调用时绑定的this对象。
+//argumentsList     target函数调用时传入的实参列表，该参数应该是一个类数组的对象。
 
 
 

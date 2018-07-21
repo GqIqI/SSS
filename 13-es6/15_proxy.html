@@ -12,20 +12,20 @@
         let obj = {
             name:'zs',
             age:20
-        };
+        };   //检测对象  对象get   set方法
         let pro = new Proxy(obj,{
             get:(target, key, proxy) => {
                 console.log('get....');
-                console.log(target, key, proxy);
-                return target[key];
+                console.log(target, key, proxy);//检测的对象，当前对象的属性 proxy  
+                return target[key]; //zs           //{name: "zs", age: 20} "name" Proxy {name: "zs", age: 20}
             },
             set: (target,key,val,proxy) => {
                 console.log('set.....');
-                console.log(target,key,val,proxy);
-                target[key] = val;
+                console.log(target,key,val,proxy); //{name: "zs", age: 20} "name" "lisi" Proxy {name: "zs", age: 20}
+                target[key] = val;//val 你需要改变成的值
             }
         });
-        // console.log(  pro.name  );
+         //console.log(  pro.name  );  //get.... undefiend 函数没有返回值  //zs
         pro.name = 'lisi';
         console.log(obj.name);
 

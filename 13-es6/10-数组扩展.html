@@ -7,6 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 
+        1.Array.from()   json数组格式、类数组转化成数组
+        2.Array.of()   将一组值，转换为数组。
+        3.arr.copyWithin(target, start = 0, end = this.length)
+                target（必需）：从该位置开始替换数据。
+                start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。
+                end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。
+        4.arr.find(function(val, key, arr){});用于找出第一个符合条件的数组成员     arr.findIndex()
+        5.arr.fill(’xx’, 1, 3);       new Array(3).fill(7)  
+        6.arr.includes()数组是否包含给定的值，与字符串的includes方法类似
+        7.entries()，keys()和values()——用于遍历数组
+        8.for …of循环
+        9.数组遍历：
+           forEach():没有返回值，只是针对每个元素调用func
+           map():返回一 个新的Array，每个元素为调用func的结果filter():返回一个符合func条件的元素数组some():
+           返回一个boolean，判断是否有元素是否符合func条件every():返回一个boolean，判断每个元素是否符合func条件
+     -->
 
     <ul>
         <li>1</li>
@@ -16,69 +33,98 @@
     </ul>
 
     <script>
-        
-       /* 
-       Array.from()  类数组转化成 数组
         var aLi = document.querySelectorAll('li');
-
-        console.log(aLi);
-        //扩展运算符
+        console.log(aLi);  
+                            //NodeList(4)
+                            //  0: li
+                            //  1: li
+                            //  2: li
+                            //  3: li
+                            // length: 4
+// Array.from()  类数组转化成 数组
+      //扩展运算符
         var arr = [...aLi];
-
         var arr2 = Array.from(aLi);
-
-        console.log(arr2); */
-
-        /* //Array.of(3)  
+        console.log(arr2); 
+        //[li, li, li, li]
+        //0:li
+        //1:li
+        //2:li
+        //3:li
+        //length:4 
+ //Array.of()   将一组值，转换为数组。
         var arr = new Array(4);
-        console.log(arr);
+        console.log(arr);// [empty × 4]
         var arr1 = Array.of(4);
-        console.log(arr1); */
-
-
+        console.log(arr1); //[4]
+        var arr2 = Array.of(1,2,4);
+        console.log(arr2); // [1, 2, 4]
+//arr.copyWithin(target, start = 0, end = this.length)
+//              target（必需）：从该位置开始替换数据。
+//              start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。包括
+//              end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。不包括
         var arr = [ 1, 2, 3, 4, 5 ,6 , 7];
-        // console.log(  arr.copyWithin(2,3,6) );
-
-        // [1, 2, 4, 4, 5, 6, 7]
+        console.log(  arr.copyWithin(2,3,6) );//[1, 2,     4, 5, 6,     6, 7]
 
 
-       /*  var result = arr.find(function(val, index, arr){
+//.arr.find(function(val, key, arr){});用于找出第一个符合条件的数组成员     arr.findIndex()
+        var result = arr.find(function(val, index, arr){
             return val > 4;
-        }) */
+        }) 
 
-        /* var result = arr.findIndex(function(val, index, arr){
+        var result1= arr.findIndex(function(val, index, arr){
             return val > 4;
         })
 
-        console.log(result); */
+        console.log(result); //5  
+        console.log(result1);  //3
 
-       /*  var arr = [1,2,3,4,5,6,7];
+//.arr.fill(’xx’, 1, 3);       new Array(3).fill(7)  
+         var arr = [1,2,3,4,5,6,7];
+         console.log( arr.fill('xx',2,5) );//[1, 2, "xx", "xx", "xx", 6, 7]
+         var arr = (new Array(5)).fill('a');
+         console.log(arr); // ["a", "a", "a", "a", "a"]
 
-        console.log( arr.fill('xx',2,5) );
-
-
-        var arr = (new Array(5)).fill('a');
-
-        console.log(arr); */
-
-
+//for …of循环
+//entries()，keys()和values()——用于遍历数组
         var arr1 = ['a','b','c','d','e','f'];
-
         for( a of arr1){
-           console.log(a);
+           console.log(a);// a b c d e f
         }
 
-       /* for( a of arr1.keys()){
-           console.log(a);
-       } */
+        for( a of arr1.keys()){
+           console.log(a); //0 1 2 3 4 5
+       } 
 
-        for( [key,val] of arr1.entries()){
-           console.log(key,val);
+        for([index,val] of arr1.entries()){
+           console.log(index,val);
         }
+                            //0 "a"
+                            //1 "b"
+                            //2 "c"
+                            //3 "d"
+                            //4 "e"
+                            //5 "f"
 
 
-        
-
+//forEach():没有返回值，只是针对每个元素调用func
+//map():返回一 个新的Array，每个元素为调用func的结果
+//filter():返回一个符合func条件的元素数组
+//some(): 返回一个boolean，判断是否有元素是否符合func条件
+//every():返回一个boolean，判断每个元素是否符合func条件                                   
+     arr1.forEach(function(val,index,arr){
+            console.log(val,index);
+        }) 
+ //a 0
+ //b 1
+ //c 2
+ //d 3
+ //e 4
+ //f 5
+         var result = arr1.filter(function(val,index,arr){
+            return index >3;
+        })
+        console.log(result); // ["e", "f"]
 
 
 

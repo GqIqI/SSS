@@ -7,12 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+        <!-- 参数默认值    与解构赋值结合
+        方法名.length   返回没有指定默认值的参数个数
+        方法名.name
+        rest参数
+        ’use strict’
+        箭头函数  =>（指向父级的指向）
+            (1)函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+        	(2)不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+        	(3)不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+ -->
     <ul>
         <li>11</li>
         <li>22</li>
         <li>33</li>
     </ul>
     <script>
+//箭头函数
         /* function aa(){
         };
         let aa=function(){
@@ -22,105 +33,90 @@
 
         }; */
 
-     var aLi=document.querySelectorAll('li');
-       for(var i=0;i<aLi.length;i++){
-           aLi[i].onclick=function(){
-               setTimeout(function(){
-                 console.log
-                   },200)
-           }
-       }
+ //函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。指向父级的指向
+          /*        var aLi=document.querySelectorAll('li');
+            for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function(){
+                setTimeout(function(){
+                console.log(this); //window
+                    },200)
+               }
+            }
 
-var person={
-   name:'zz',
-   age:20,
-   say:() => { // function person
-       aa =() => {
-           console.log(this);//window
-       }
-       aa();
-   }
-}
- person.say() ;    
+            var person={
+            name:'zz',
+            age:20,
+            say:() => { // function person
+                aa =() => {
+                    console.log(this);//window
+                }
+                aa();
+            }
+            }
+            person.say() ;    
+    */
 
-
-  // 默认值 undefined 时  使用默认值
-        /* function aa([x,y=5]){
-
-            console.log(y);
+// 默认值 undefined 或不写时  使用默认值,其他情况下都不用默认值
+      /*   function aa([x,y=5]){ 
+            console.log(y);  //0
             // return x+y;
         }
-        console.log( aa([3,0]) );
+        console.log( aa([3,0]) );// undefined
 
 
-        console.log( aa.length );
+      console.log( aa.length ); //1
 
-        console.log( aa.name ); */
-
-
-        //箭头函数
+        console.log( aa.name ); //aa */
+      
 
 
-       /*  function aa(){
-
-        }
-
-        let aa = function(){
-            
-        }
 
 
-        let aa = () => {
-
-        }
- */
-
-
-        /* var aLi = document.querySelectorAll('li');
+   /*      var aLi = document.querySelectorAll('li');
         for(var i=0; i<aLi.length; i++){
             aLi[i].onclick = function(){
                 var _this = this;
                 setTimeout(function(){
-                    console.log(_this); 
+                    console.log(_this); //  <li>11</li>
                 },200)
             }
-        } */
-        // 函数中this 执行时的this  箭头函数中this 声明时的this
-        //到父作用域找 
-        /* var aLi = document.querySelectorAll('li');
-
+        } */ 
+// 函数中this 执行时的this  箭头函数中this 声明时的this
+//到父作用域找 
+    /*   var aLi = document.querySelectorAll('li');
         for(var i=0; i<aLi.length; i++){
             aLi[i].onclick = function(){
                 setTimeout(() => {
-                    console.log(this); 
+                    console.log(this); //  <li>11</li>
                 },200)
             }
-        } */
+        }*/
         /* var person = {
             name:"zs",
-            age:10,
-            say:function(){
+            age:10, 
+            say:function(){  // function变成箭头函数，下面则指向windows
                 aa = () => {
                     setTimeout(() => {
-                        console.log(this);
+                        console.log(this); //{name: "zs", age: 10, say: ƒ}
                     },1000);  
                 }
                 aa();
             }
         }
         person.say(); */
-        //不能用于构造函数 
-        /* Person = (name,age) => {
+//不能用于构造函数 
+//不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+       /*  Person = (name,age) => {
             this.name = name;
             this.age = age;
         }
         var person1 = new Person('zs',20); */
-        //在箭头函数不允许使用arguments
-        let aa = (...rest) => {
-            // console.log(  arguments  );
+ //在箭头函数不允许使用arguments,该对象在函数体内不存在。如果要用，可以用 rest 参数代替
+         let aa = (...rest) => {
+            //console.log(  arguments  );
             console.log(rest);
         }
-        aa(1,2,3,4); 
+        aa(1,2,3,4); /* */
     </script>
 </body>
 </html>

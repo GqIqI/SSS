@@ -7,8 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-
+ <!--       Set类似于数组，但是成员的值都是唯一的，没有重复的值。函数接受数组或类数组作为参数。new Set();
+            add(value)：添加某个值，返回Set结构本身。              
+            delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。							
+            has(value)：返回一个布尔值，表示该值是否为Set的成员。
+            clear()：清除所有成员，没有返回值
+            遍历：keys()  values()  entires()  forEach()  for…of
+            长度：.size()
+            WeakSet:成员只能是对象，而不能是其他类型的值。add()增加值
+ -->
     <script>
+//去重
         /* let a = [1,2,3,3,4];
         function aa(){
             var obj = {};
@@ -23,12 +32,11 @@
             return result;
         }
         console.log(  aa(a) ); */
-
-       /*  let arr1 = [1,2,3,3,4];
+//set去重
+ /*     let arr1 = [1,2,3,3,4];
         let arr2 = new Set(arr1);
         // let result = [...arr2];
         let result = Array.from(arr2);
-        
         console.log(arr2);
  */
 
@@ -38,32 +46,18 @@
         arr2.add(8);
         arr2.delete(3);
 
-        console.log( arr2.has(1) );
-        console.log(arr2);
+        console.log( arr2.has(1) ); //true
+        console.log(arr2);//1 2 4 8
 
-
-        var a = new WeakSet();
+//WeakSet只能操控对象
+        var a = new WeakSet();  
         a.add({name:'zs'});
         a.add({
             age:30
         })
 
         console.log(a);
-
-
-
-
-
-
-        
-
-
-
-
-
-        
-        
-        
+     
     </script>
     
 </body>
