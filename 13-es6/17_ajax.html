@@ -17,32 +17,30 @@
         var oBtn = document.querySelector('#btn');
         var oDiv = document.querySelector('#div1');
         oBtn.onclick = function(){
-
-             //1、创建xmlHtppRequest 对象
+ //1、创建xmlHtppRequest 对象
             var xmlhttp;
             if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp=new XMLHttpRequest();
             }else{// code for IE6, IE5
                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
             }
-            //2、向服务器发送请求
+ //2、向服务器发送请求
 
-            //get
-            xmlhttp.open("GET","test.json?name=xx",true);
-            xmlhttp.send(); 
+            //get  请求数据量小  在地址栏中显示= &  没有post安全
+            xmlhttp.open("GET","test.json?name=xx",true);//请求方式（get  post） 地址 是否是异步
+            xmlhttp.send(); //name=xx传数据
 
             //post
-
             xmlhttp.open("POST","test.json",true);
-            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");//固定
             xmlhttp.send("name=xx");
 
-            //3、服务器响应
+//3、服务器响应
             xmlhttp.onreadystatechange=function(){
                 if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                     //操作页面 更改想要更新
                     console.log(typeof xmlhttp.responseText);
-                    var obj = JSON.parse(xmlhttp.responseText)
+                    var obj = JSON.parse(xmlhttp.responseText)//从字符串 变成对象 
                     oDiv.innerHTML = obj.result;
                 }
             }
@@ -52,7 +50,6 @@
         /* 
         readyState
         存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
-
         0: 请求未初始化
         1: 服务器连接已建立
         2: 请求已接收
@@ -60,32 +57,17 @@
         4: 请求已完成，且响应已就绪
         
 
-        状态码：status
-        
+        状态码：status 
         200 服务器成功返回
         301 永久重定向
         302 临时重定向
+        304 缓存
         404 资源找不到
         500 服务器错误
-        304 缓存
+     
         
         
          */
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
        /*  get post请求区别

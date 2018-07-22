@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //大写P  属性写在构造函数中 方法写在原型下
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log(this.name+'is say');////zsis say
+        }
+        Person.prototype.eat = function(){
+            console.log(this.name+'正在吃。。。。');
+        }
+        var p1 = new Person('zs',30);  //实例化对象 
+        p1.say(); //zs is say. 
+
+
+
+        
+
+        //继承 .call(this)  继承属性  
+        //子类的propotype = new 父类实例化对象
+        function Child(name,age){
+            //this
+            Person.call(this,name,age);  //会继承person下属性，this指向child  
+        }
+
+        Child.prototype = new Person(); //一个人 
+
+        var child = new Child('zxs',1);
+      //  child.say();// zxsis say
+        console.log(child);//Child {name: "zxs", age: 1}
+        
+        </script>
+
+
+</body>
+
+</html>

@@ -8,9 +8,10 @@
 </head>
 <body>
     <div></div>
-    <script src="../jquery/jquery-1.12.4.js"></script>
-    <script>
+    <script src="jquery-1.12.4.js"></script>
+    <script> //请求地址  请求传的参数  成功的回调函数  返回的格式 
         $.get('test.json',function(data){
+            console.log( typeof data);//object对象 
             document.querySelector('div').innerHTML = data.result;
         },'json');
     </script>

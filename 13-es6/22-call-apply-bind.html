@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+    <script>
+            function fn(num1,num2){
+                console.log(num1,num2);
+                console.log(this);
+            }
+           var  person= {
+            name:'zs',
+            age:20
+        }; 
+       fn.call(person,1,2); //1 2  {name: "zs", age: 20}  多参
+       fn.apply(person,[1,2]); //数组
+       fn.bind(person,1,2)();  //得调用
+
+         var aLi=document.querySelectorAll('li');
+            for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function(){
+                setTimeout(function(){
+                console.log(this); //window
+                    },200)
+               }
+            }
+
+               var aLi=document.querySelectorAll('li');
+            for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function(){
+                setTimeout(()=>{
+                console.log(this); //li
+                    },200)
+               }
+            }
+
+
+
+               var aLi=document.querySelectorAll('li');
+            for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function(){
+                setTimeout(function(){
+                console.log(this); 
+                    }.bind(this),200)  //只改变指向 没有调用 定时器会自动调用  li
+               }
+            }
+        </script>
+</body>
+</html>

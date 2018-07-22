@@ -23,10 +23,14 @@
                 Reflect.apply(...arguments);
             }
         });
-        pro(1);
+        pro(1);     //apply .. 调用
+                    //fn 将要被调用
+                    // fn...
 
 
-        let fn = function(){
+
+
+    /*     let fn = function(){
             console.log('登录出来...');
         }
         var pro = new Proxy(fn,{
@@ -37,7 +41,7 @@
                 }
             }
         })
-        pro();
+        pro(); */
 //Reflect.apply() 通过指定的参数列表发起对目标(target)函数的调用。
 //Reflect.apply(target, thisArgument, argumentsList)
 //target  目标函数。
@@ -45,10 +49,20 @@
 //argumentsList     target函数调用时传入的实参列表，该参数应该是一个类数组的对象。
 
 
-
+/* let target=function(){
+    return'1234';
+}
+var handler ={
+            apply(target,ctx,args){
+                console.log('apply .. 调用');
+                return Reflect.apply(...arguments);
+            }
+        }; 
     
-    
-    
+    var pro=new Proxy(target,handler);
+    console.log(  pro());  //apply .. 调用
+                            //  1234
+                             */
     </script>
 
     
