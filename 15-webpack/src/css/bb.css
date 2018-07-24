@@ -1,0 +1,16 @@
+body{
+    background:paleturquoise url(../images/4.jpg) center center no-repeat;
+    border-radius: 5px;
+    display: flex;
+    transform: rotate(30deg);
+};
+#div0{
+    width: 380px;
+    height: 380px;
+    background:orange  ;
+    margin: 0 auto ;
+  }
+  img{
+     width: 100px;
+     height: 100px;
+  }

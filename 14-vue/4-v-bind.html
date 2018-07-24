@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .aa{
+            background: palevioletred
+        }
+        .bb{
+            background: paleturquoise
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <h2 v-bind:id="test"> <!--  绑定属性 -->
+                {{test}}
+        </h2>
+        <p :class="{aa:isA,bb:isB}" @click="change()">click</p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+       var ve= new Vue({
+        el:"#div0",
+        data:{
+            test:111,
+            isA:true,
+            isB:false
+        },
+        methods:{
+            change(){
+                this.isA=!this.isA,
+                this.isB=!this.isB
+            }
+        }
+    })
+
+    </script>
+</body>
+</html>
