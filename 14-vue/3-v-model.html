@@ -7,22 +7,42 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="div0">
-       <input type="text" v-model="test">  <!-- 双向绑定 -->
-       {{test}} 
-     
-    <script src="vue.js"></script>
-    <script>
-        var vm=new Vue({
-            el:"#div0",
-            data:{
-                test:1
+        <div id="div0">
+          <input type="text" v-model="test">   {{test}}  <!-- 双向绑定 test值为data里的值  -->
+          <input type="radio" value="man" v-model="sex"> 男
+          <input type="radio" value="woman" v-model="sex"> 女
+    
+    
+          <input type="checkbox" value="eat" v-model="hobby"> 吃饭    
+          <input type="checkbox" value="sleep" v-model="hobby"> 睡觉
+          <input type="checkbox"  value="play" v-model="hobby"> 打豆豆
+    
+    
+          <select v-model="school"> 
+                <option value="1" >黑大</option>
+                <option value="2" >农大</option>
+                <option value="3" >理工</option>
+            </select>
+         
+        </div>
+
+        
+        <script src="vue.js"></script>
+        <script>
+            var vm=new Vue({
+                el:"#div0",
+                data:{
+                    test:1,
+                    sex:"man",/*  与value里数据交换   此时默认为男   空的话就不选 */
+                    hobby:[],
+                    school:""
+                
+                       
+                },
+                methods:{
                    
-            },
-            methods:{
-               
-            }
-        }) 
-          </script>
+                }
+            }) 
+</script>
 </body>
 </html>

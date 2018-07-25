@@ -25,6 +25,15 @@
 
      -->
     <script>
+        /*  promise运用的场景：
+           当有多个Ajax请求的时候 出现了嵌套的情况，
+           采用promise链式(.then .catch)操作   异步操作以同步方式表现出来 
+
+           还有一种是3个异步操作  promise (all then) 等都完成在执行别的操作
+           只选最快的 一个执行完了就执行    */
+
+
+           
         //多个Ajax请求，请求间可能有关系
        /*  $.get('a.json',function(data){
             if(data.status == 1){
