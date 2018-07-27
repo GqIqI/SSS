@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div0">
+      <input type="text" v-model="firstName">
+      <input type="text" v-model="lastName">
+      <label for="fullname:">{{full()}}</label>    <!-- 调用方法 -->
+      <label for="fullname:">{{fullName}}</label>  <!-- 调用属性 -->
+
+    </div>
+   <script src="vue.js"></script>
+   <script>
+ let vm=new Vue({
+            el:"#div0",
+            data:{
+               firstName:"",
+               lastName:""
+
+            },
+            methods:{
+                full(){  
+                    return this.firstName+this.lastName;
+                }
+            },
+//computed：计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+//计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。
+
+            computed:{//计算属性  可以缓存  值就存在属性中  有修改就改变 没有就不改变 
+             /*    fullName(){  //相当于 fullName:function()
+                    return this.firstName+ " " +this.lastName;
+                }, */
+                fullName:{ 
+                    get:function(){
+                          return this.firstName+ " " +this.lastName;
+                    },
+                    set:function(val){
+                         //this.firstName="aaaaa"
+
+                        // fullName = "wang wu";
+                        var arr = val.split(" ");
+                        this.firstName = arr[0];
+                        this.lastName = arr[1];
+                    }  
+                } 
+
+            },
+//一个对象，键是需要观察的表达式，值是对应回调函数。
+/*             watch:{
+                up:function(new,old){
+
+                }
+
+                 firstName:function(){
+                    console.log('firstName 。。。。。。');
+                }
+            }*/
+
+          }) 
+
+   </script>
+</body>
+</html>

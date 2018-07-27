@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>set</title>
+</head>
+<body>
+    <!-- Vue不能通过索引设置数组的值   arr=[1,2,3]   arr[1]=5   -->
+    <div id="app">
+        <button @click="changes()">click</button>
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+            {{obj}}
+            <h2 v-for="(val,key) in obj">{{key}}:{{val}}</h2>
+        </ul> 
+    
+    </div>
+        <script src="vue.js"></script>
+        <script>
+          let vm=new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3,4,5],
+                obj:{
+                    name:'ssss'
+                }
+
+            },
+            methods:{
+                changes(){
+//数组修改 添加  Vue.set()
+                    Vue.set (this.arr,1,9); //修改数组中的值 不可以通过索引  this.list[1]=9
+                    this.list.splice(1,1,8);
+                    Vue.set (this.arr,5,9);
+                    Vue.set (this.arr,7,0);
+//对象修改 添加
+                    this.obj.name="zzz";  //可以修改对象中属性的值
+                    Vue.set(this.obj,'age',50) //对象添加属性必用Vue.set
+                    this.obj.age="20"; //data中会更新 但页面不显示更新
+                    
+
+                }
+
+
+            }
+
+
+
+          })
+        
+        
+        
+        </script>
+  
+</body>
+</html>

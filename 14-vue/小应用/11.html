@@ -48,8 +48,8 @@
                 <button class="add" @click="add()">添加</button>
             </div>
             <div>
-                <input type="text" class="searchval" placeholder="请输入搜索内容">
-                <button class="search">搜索</button>
+                <input type="text" class="searchval" v-model="searchC" placeholder="请输入搜索内容">
+                <button class="search" @click="search()">搜索</button>
             </div>
             <ul>
                  <li v-for="(product,index) in proList" @click="change(product,index)" :class="{selected:product.isA}">
@@ -61,7 +61,7 @@
             </ul>
     
             <div>
-                <button class="del">删除选中</button>
+                <button class="del" @click="del()">删除选中</button>
                 总价
                 <span class="totalprice">{{sum()}}</span>
             </div>
@@ -96,11 +96,13 @@
         ],
         name:"",
         price:"",
-        check:[]
+        check:[],
+        searchC:""
+
        },
        methods:{
               change(product,idx){
-                  if(product.isA){
+                  if(product.isA){  //勾选   变色   
                       var index=this.check.indexOf(idx);
                       this.check.splice(index,1)
                   }else{
@@ -127,6 +129,22 @@
                   });
                   return totalprice;
                  
+              },
+              del(){
+                   let  newPro=this.proList.filter((product)=>{
+                      return (product.isA !=true);
+                      
+                    });
+                    this.proList=newPro;
+                    this.check=[];
+              },
+              search(){
+                  var  newPro2=this.proList.filter((product)=>{
+                      return (product.name.includes(this.searchC));
+                    });
+                    this.proList=newPro2;
+
+
               }
 
        }
