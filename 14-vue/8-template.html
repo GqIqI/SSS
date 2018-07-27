@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- template标签，HTML5提供的新标签，更加规范和语义化 ；可以把列表项放入template标签中，然后进行批量渲染 -->
+     <div id="app">
+         <div  v-for="key in arr">   <!-- 循环N个div  里面有h2,p -->
+      <!--   <template v-for="key in arr" > -->   <!-- 不用div括起来  只循环h2,p -->
+                <h2>{{key}}</h2>
+                <p>{{key}}</p>
+          <!--   </template> -->
+        </div>
+      </div>
+<script src="vue.js"></script>
+  <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                arr:['a','b','c'],
+                msg:1
+            }
+        });
+  </script>
+
+
+</body>
+</html>

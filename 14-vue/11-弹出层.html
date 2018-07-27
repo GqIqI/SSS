@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .dialog{
+            width: 400px;
+            height: 400px;
+            background: #cccccc;
+            border:1px solid #000;
+        }
+        .title{
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #000;
+        }
+        .close{
+            float:right;
+        }
+
+</style>
+<body>
+            <div id="app">
+                <button @click="login=true,register=false">登陆</button>
+                <button @click="register=true,login=false">注册</button>
+                <my-dialog v-if="login" title="登陆" @close="fn"> 
+                    用户名：<input type="text"> </br>
+                    密码：<input type="password"></br>
+                    <button>登陆</button>
+                </my-dialog>
+                <my-dialog v-if="register" title="注册"> 
+                    用户名：<input type="text"></br>
+                    密码：<input type="password"></br>
+                    确认密码：<input type="password"></br>
+                    <button>注册</button>
+                </my-dialog>
+            </div>
+<script src="vue.js"></script>
+
+
+
+<script type="text/x-template" id="temp">
+      <div class="dialog">
+            <div class="title">
+                 <span>{{title}}</span>
+                <span class="close" @click=$emit('close','aaaa')>[X]</span>
+            </div>
+            <div class="content">
+                <slot>  </slot>
+            </div>
+      </div>
+</script>
+
+
+
+ <script>
+      new Vue({
+        el:"#app",
+        data:{
+            login:false,
+            register:false
+        },
+        methods:{
+            
+        }
+        components:{
+            myDialog:{
+                   template:"#temp",
+                   props:['title']
+            }
+          
+        }
+
+      })
+ </script>
+
+</body>
+</html>

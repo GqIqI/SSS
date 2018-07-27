@@ -43,7 +43,7 @@
                     set:function(val){
                          //this.firstName="aaaaa"
 
-                        // fullName = "wang wu";
+                       // vm.fullName = "wang wu";  测试
                         var arr = val.split(" ");
                         this.firstName = arr[0];
                         this.lastName = arr[1];
@@ -53,10 +53,6 @@
             },
 //一个对象，键是需要观察的表达式，值是对应回调函数。
 /*             watch:{
-                up:function(new,old){
-
-                }
-
                  firstName:function(){
                     console.log('firstName 。。。。。。');
                 }

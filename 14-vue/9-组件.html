@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <div id="div0">
+             <demo title="1111"> </demo>
+            
+        </div>
+        
+        
+        <div id="div1">
+                <total></total>
+                <demo :test="aa"> </demo>
+        </div> 
+
+
+        <div id="app">
+                <demo title="我是title1" content="我是内容1" >
+                    <h2 slot="content">我是传值content</h2>
+                    <h3 slot="footer">我是传值footer</h3>
+                </demo>     
+        </div>
+    <script src="vue.js"></script>
+    <script type="text/x-template" id="temp">
+        <div>
+            <h2 class="header">{{title}}</h2>
+            <h2 class="header">{{content}}</h2>
+
+            <div class="content">
+
+                <slot name="content">
+                    <p>我是内容默认值1</p>
+                </slot>
+                <p>我是内容默认值2</p>
+
+            </div>
+
+            <div class="footer">
+
+                <span>我是footer</span>
+                <slot name="footer">
+                    <span>我是默认footer</span>
+                </slot>
+            </div>
+
+            <slot><span>默认值</span></slot>
+
+        </div>
+
+    </script>
+
+
+
+         <script>
+//根元素只能有一个 全局组件
+        Vue.component('total',{
+            template:'<div><h1>全局who</h1><p>全局you</p></div>'
+        }); 
+             new Vue({
+                 el:"#div0",
+                 data:{
+                   
+                 },
+                 components:{
+                     demo:{//模板名
+                         template:"<h2>  aaaaa  {{title}}  </h2>",//模板
+                         props:['title'] // 子组件  传参  父组件到子组件传值用props
+                     }
+                 }
+             }),
+             new Vue({
+                 el:"#div1",
+                 data:{
+                   aa:'some'
+                 },
+                 components:{
+                     demo:{
+                         template:"<h2>  bbb  {{test}}  </h2>",
+                         props:['test'] 
+                     }
+                 }
+             }),
+             new Vue({
+                    el: "#app",
+                    data: {
+                    
+                    },
+                    //局部组件
+                    components:{
+                        demo:{
+                            template:'#temp',
+                            props:['title','content']
+                        }
+                    }
+           });
+         </script>
+</body>
+</html>

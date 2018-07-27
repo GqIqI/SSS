@@ -8,15 +8,17 @@
 </head>
 <body>
 
-    <!--  v-show 与v-if类似，只是会渲染其身后表达式为false的元素，而且会给这样的元素添加css代码：style="display:none";
+<!--  v-show 与v-if类似，只是会渲染其身后表达式为false的元素，而且会给这样的元素添加css代码：style="display:none";
+    , v-else 必须跟在v-if/v-show指令之后，不然不起作用；
 
-3, v-else 必须跟在v-if/v-show指令之后，不然不起作用；
-
-如果v-if/v-show指令的表达式为true，则else元素不显示；如果v-if/v-show指令的表达式为false，则else元素显示在页面上； -->
+如果v-if/v-show指令的表达式为true，则else元素不显示；如果v-if/v-show指令的表达式为false，则else元素显示在页面上；
+在控制台 v-if元素不显示 但v-show显示display:none
+ -->
     <div id="div0">
         <h2 v-if= " test=='a' ">11</h2>
         <h2 v-else-if=" test=='b' ">22</h2>
         <h2 v-else>33</h2>
+        <h2 v-show="test == 'a'">showshow</h2>   <!-- 为false 在控制台其他元素都不显示 但v-show显示display:none   -->
     </div>
 
     <script src="vue.js"></script>
@@ -24,7 +26,7 @@
      new Vue({
          el:"#div0",
          data:{
-             test:"b"
+             test:"c"
          }
      })
  </script>
