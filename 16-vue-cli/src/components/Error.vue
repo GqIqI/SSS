@@ -1,7 +1,7 @@
 <template>
     <div>
-        {{$route.params.Nname}}   <!-- 调用传过来的 并显示 -->
-        {{$route.params.Aage}}
+       <h5>   出错啦 ！找不到啦 </h5>
+     
     </div>
 </template>
 
@@ -9,7 +9,7 @@
     export default {
         data(){
             return{
-
+                
             }
         }
     }
