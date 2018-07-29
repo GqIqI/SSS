@@ -4,7 +4,8 @@ module.exports = {
     ],
     module:{
             rules:[
-                     {
+                     {   //c3前缀
+                        
                         test:/\.css$/,
                         use:ExtractTextPlugin.extract({
                             fallback: "style-loader",
