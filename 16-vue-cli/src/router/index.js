@@ -9,6 +9,7 @@ import Name from '@/components/Name'
 import Password from '@/components/Password'
 import Url from '@/components/Url'
 import Error from '@/components/Error'
+import Count from '@/components/Count'
 
 
 Vue.use(Router)
@@ -55,6 +56,12 @@ export default new Router({
         }
       ]
     },
+     {  //url传参
+      path: '/count',
+      name: 'Count',
+      component: Count,
+    },
+
     {  //url传参
       path: '/url/:Nname/:Aage',
       name: 'Url',

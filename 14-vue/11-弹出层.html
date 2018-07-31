@@ -51,7 +51,7 @@
       <div class="dialog">
             <div class="title">
                  <span>{{title}}</span>
-                <span class="close" @click=$emit('close','aaaa')>[X]</span>
+                <span class="close" @click="$emit('close','aaaa')">[X]</span>
             </div>
             <div class="content">
                 <slot>  </slot>
@@ -69,7 +69,9 @@
             register:false
         },
         methods:{
-            
+            fn(aaaa){
+                console.log(aaaa);
+            }
         },
         components:{
             myDialog:{

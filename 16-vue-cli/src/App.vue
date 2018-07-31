@@ -10,6 +10,7 @@
       <router-link to="/url/name:sss/age:88">重定向传参</router-link>
       <router-link to="/love">重定向别名alias</router-link>
       <router-link to="/error">错误404</router-link>
+      <router-link to="/count">计算</router-link>
      <transition  name='change'>
          <router-view></router-view>
      </transition>

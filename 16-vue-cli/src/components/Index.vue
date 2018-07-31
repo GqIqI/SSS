@@ -4,6 +4,7 @@
        <!-- <router-link to="/index/search">查询</router-link> -->
        <router-link :to="{name:'chaxun',params:{aa:'xxx',bb:'yyy'}}">查询</router-link>  <!-- 参数传参 -->
        <router-link to="/index/buy">购买</router-link>
+ A53
        <router-view></router-view>
     </div>
 </template>
