@@ -75,7 +75,7 @@ export default new Router({
      path: '/test/:Nname/:Aage',
      redirect:'/index/:Nname/:Aage'
     },
-    {  //重定位后不过改变路径名
+    {  //重定位后改变路径名
       path: '/index',
       component: Index,
       alias:'/love'
