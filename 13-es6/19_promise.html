@@ -87,7 +87,7 @@
         /* Promise.all([p1,p2,p3]).then(function(){
             console.log('1111'); 
         },function(){
-            console.log('0000');
+            console.log('0000');//全成功在进行
         });   */
 
         Promise.race([p1,p2,p3]).then(function(){ //只选最快的 一个执行完了就执行  不管成功失败 

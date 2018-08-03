@@ -3,12 +3,12 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const state = {
+const state = {  //存数据
     num : 5,
     x:10
 }
 
-const mutations = {
+const mutations = { //存方法  修改数据
     add(state,sum){
         state.num+=sum;
     },
@@ -17,13 +17,13 @@ const mutations = {
     }
 }
 
-const getters = {
+const getters = {  //计算属性
     count1(state){
         return state.num +100;
     }
 }
 
-const actions = {
+const actions = {  //异步操作
     actionsAdd({commit},x){
         commit('add',x);
         // setTimeout(function(){

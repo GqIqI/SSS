@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .img-box img{
+            width: 100%;
+            height: 12rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .container{
+            position: relative;
+            height: 12rem;
+        }
+        .btn-box{
+            position: absolute;
+            bottom: 0.5rem;
+            list-style: none;
+            right:5rem;
+        }
+        .btn-box li{
+            width: 1.3rem;
+            height: 1.3rem;
+            background: #cccc;
+            margin : 0 0.5rem;
+            float: left;
+            text-align: center;
+            line-height: 1.3rem;
+            border-radius: 50%
+        }
+        .btn-box li.choose{
+            background:paleturquoise
+        } 
+                
+        /* .change-enter{
+        opacity: 0;
+        }
+        .change-enter-active{
+        transition:  opacity 3s ;
+        }
+        .change-enter-to{
+        opacity: 1;
+        }
+        .change-leave{
+          opacity: 1;
+        }
+        .change-leave-active{
+          transition:  opacity 3s ;
+        }
+        .change-leave-to{
+          opacity: 0;
+        } */
+
+        .change-enter{
+           transform: translateX(100%)
+        }
+        .change-enter-active{
+          transition:  transform  1s ;
+        }
+        .change-enter-to{
+            transform: translateX(0)
+        }
+        .change-leave{
+            transform: translateX(0)
+        }
+        .change-leave-active{
+            transition:  transform  1s ;
+        }
+        .change-leave-to{
+            transform: translateX(-100%)
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="img-box">
+        <transition-group  name="change" tag="div">
+                <img  v-show="index == nowindex"  v-for="(img,index) in imgs" :key="index"  :src="img" alt="">
+        </transition-group>           
+      </div>
+      <ul class="btn-box">
+          <li v-for="(x,index) in imgs.length" :class="{choose:index == nowindex}" @click="variation(index)">{{x}}</li>
+      </ul>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+       new Vue({
+          el:".container",
+          data:{
+              imgs:[
+                  "img/3.jpg", 
+                  "img/1.jpg",
+                  "img/2.jpg",
+                  "img/4.jpg"   
+              ],
+              nowindex:0
+          },
+          methods:{
+            variation(index){
+                  this.nowindex=index
+              }
+          },
+          created() {
+              setInterval( () => {
+                  this.nowindex++;
+                  if( this.nowindex ==this.imgs.length){
+                    this.nowindex=0
+                  }
+              },2000)
+          },
+
+
+
+       })
+
+    </script>
+</body>
+</html>
