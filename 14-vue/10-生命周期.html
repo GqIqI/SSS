@@ -21,18 +21,16 @@
                 },
                 beforeCreate:function(){
                     console.log('beforeCreate',this.$data,this.$el);
-                },
+                },//undefined undefined
                 created:function(){
                     console.log('created',this.$data,this.$el);
-                },
-                beforeMount:function(){
-                    //{{msg}}
+                },//object  undefined
+                beforeMount:function(){    
                     console.log('beforeMount',this.$el);
-                },
+                },//{{msg}}
                 mounted:function(){
-                    //aaa
                     console.log('mounted',this.$el);
-                },
+                },  //aaa
                 beforeUpdate:function(){
                     console.log('beforeUpdate');
                 },
